@@ -1884,116 +1884,269 @@
         </div>
       </div>
 
-      <!-- Dual Magazine Columns: 4 Era Characteristics (Left) + 4 Regional Characteristics (Right) -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
+      <!-- =========================================================================
+           CHAPTER 06 INTERACTIVE CONSOLE: DUAL DIMENSIONS + PANORAMIC MATRIX
+           解决文字过长问题，打造可点选、可对比、高可视化的宏观双维深度交互展台
+      ========================================================================== -->
+      <div class="reveal-up mb-12">
+        <!-- Mode Switcher Nav Pills -->
+        <div class="flex flex-wrap items-center justify-between gap-4 p-2 rounded-2xl bg-white/[0.04] border border-white/10 mb-8 backdrop-blur-md">
+          <div class="flex flex-wrap items-center gap-2" id="synthesis-tab-buttons">
+            <button id="synth-tab-btn-era" data-tab="era" class="synth-nav-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-serif font-bold transition-all flex items-center gap-2 bg-gradient-to-r from-rose-600 to-rose-500 text-white shadow-lg shadow-rose-900/40">
+              <span class="text-base">⌛</span> 维度一：四大时代特征解码 (Temporal Shift)
+            </button>
+            <button id="synth-tab-btn-region" data-tab="region" class="synth-nav-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-serif font-bold transition-all flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/5 border border-transparent">
+              <span class="text-base">🗺️</span> 维度二：四大地域格局折叠 (Spatial Folding)
+            </button>
+            <button id="synth-tab-btn-matrix" data-tab="matrix" class="synth-nav-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-serif font-bold transition-all flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/5 border border-transparent">
+              <span class="text-base">📊</span> 维度三：全景速查对照矩阵 (Comparative Matrix)
+            </button>
+          </div>
+          <div class="hidden md:flex items-center gap-2 text-[11px] font-mono text-gray-400 pr-3">
+            <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+            <span>交互式宏观数据透镜 · 点选探索详情</span>
+          </div>
+        </div>
 
-        <!-- Left 6 Cols: 四大时代特征 (Era Characteristics) -->
-        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-rose-500 relative overflow-hidden reveal-up">
-          <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
-            <div>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-rose-400 block">DIMENSION I · TEMPORAL SHIFT</span>
-              <h3 class="font-serif text-2xl sm:text-3xl font-black text-white mt-0.5">当下中国婚育的“四大时代特征”</h3>
+        <!-- TAB PANEL 1: ERA CHARACTERISTICS (时代四大特征交互展台) -->
+        <div id="synth-panel-era" class="synth-tab-panel grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch transition-all duration-500">
+          <!-- Left 5 Cols: Interactive Era Selector Cards -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+            <div data-era-idx="0" class="synth-era-card active cursor-pointer p-4 rounded-2xl border-l-4 border-l-amber-400 bg-white/[0.06] border border-white/10 hover:border-amber-400/50 transition-all relative overflow-hidden group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-amber-300">01 · 确定性契约</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">76.4% 稳定首要</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">从“生存本能”转向“确定性契约”：面对青年失业率波动，工作与收入预期成为成家第一前置条件。</p>
             </div>
-            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm rotate-6 font-serif font-black text-xs shrink-0">
-              时代切面<br/><span class="text-[9px] font-mono">2010–2025</span>
+
+            <div data-era-idx="1" class="synth-era-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-cyan-400 bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-cyan-300">02 · 晚婚新纪元</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold">全国均值 +3.78岁</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">从“24岁早婚普婚”迈入“30岁晚婚新纪元”：高等教育年限扩张与生命周期整体大幅后移。</p>
+            </div>
+
+            <div data-era-idx="2" class="synth-era-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-rose-500 bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-rose-300">03 · 防御性风控</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">34.8x PIR · 101万育儿</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">从“感性结合”转向“防御性风控精算”：高安居成本与百万直接育儿重担触发避险棘轮。</p>
+            </div>
+
+            <div data-era-idx="3" class="synth-era-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-sky-400 bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-sky-300">04 · 性别与时间博弈</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">49h工时 · 4.48x惩罚</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">从“家庭内部消化”转向“性别与时间博弈”：超时加班与母职晋升代价逼退婚育窗口。</p>
             </div>
           </div>
 
-          <div class="space-y-5">
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-amber-300">01 · 从“生存本能”转向“确定性契约”</span>
-                <span class="font-mono text-[11px] text-amber-400 font-bold">76.4% 首要锚点</span>
+          <!-- Right 7 Cols: Dynamic Inspector Stage -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between bg-gradient-to-br from-white/[0.04] to-black/60 shadow-2xl">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                <div class="inline-flex items-center gap-2">
+                  <span id="era-inspect-code" class="px-2.5 py-0.5 rounded font-mono text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">01 / ERA</span>
+                  <span id="era-inspect-highlight" class="font-mono text-xs text-gray-300">76.4% 青年视稳定为第一锚点</span>
+                </div>
+                <span class="text-[11px] font-mono text-gray-500">// 时代纵深实测解码</span>
               </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>工作与收入预期稳定成为第一前置条件</strong>：面对16–24岁青年失业率波动（13.2%–18.8%）与2亿灵活就业浪潮，近七成（69.9%）毕业生倾向体制内求稳；没有稳定的岗位现金流，年轻人拒绝盲目进入高负债的婚姻契约。
+
+              <h4 id="era-inspect-title" class="font-serif text-2xl sm:text-3xl font-black text-white mb-4 leading-tight">
+                从“生存本能”转向“确定性契约”
+              </h4>
+
+              <!-- Visual Dual Metric Cards -->
+              <div class="grid grid-cols-2 gap-4 mb-5">
+                <div class="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
+                  <span id="era-stat-l-label" class="text-[11px] font-mono text-gray-400 block mb-0.5">求稳首选体制/国企</span>
+                  <span id="era-stat-l-val" class="font-mono text-xl sm:text-2xl font-bold text-amber-300">69.9%</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
+                  <span id="era-stat-r-label" class="text-[11px] font-mono text-gray-400 block mb-0.5">16-24岁青年失业率峰值</span>
+                  <span id="era-stat-r-val" class="font-mono text-xl sm:text-2xl font-bold text-rose-400">18.8%</span>
+                </div>
+              </div>
+
+              <!-- Then vs Now Comparison Box (时代逻辑对照卡) -->
+              <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-3 mb-4">
+                <div class="flex items-start gap-3">
+                  <span class="px-2 py-0.5 rounded bg-gray-700/60 text-gray-300 font-mono text-[11px] shrink-0 mt-0.5">2010 过去逻辑</span>
+                  <p id="era-inspect-past" class="text-xs text-gray-300 leading-relaxed">
+                    24岁顺理成章成家，以“双职工+家庭纽带”共同抵御初期生活不确定性，家庭被视为最小风险共担单位。
+                  </p>
+                </div>
+                <div class="w-full h-[1px] bg-white/5"></div>
+                <div class="flex items-start gap-3">
+                  <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono text-[11px] shrink-0 mt-0.5">2025 当代逻辑</span>
+                  <p id="era-inspect-now" class="text-xs text-white font-medium leading-relaxed">
+                    灵活就业达2亿人，面对职业生涯的高波动性，没有稳固岗位现金流前，绝不盲目进入长周期、高负债的家庭契约。
+                  </p>
+                </div>
+              </div>
+
+              <!-- Narrative Analysis -->
+              <p id="era-inspect-analysis" class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                房价与租金只是成家成本的“分子”，而岗位稳定性与可持续收入预期才是“分母”。当年轻人对未来缺乏远期确定性时，推迟甚至拒绝成家就成为抵御个体财务断崖的最理性风控选择。
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-cyan-300">02 · 从“24岁早婚普婚”迈入“30岁晚婚新纪元”</span>
-                <span class="font-mono text-[11px] text-cyan-400 font-bold">24.89岁 → 28.67岁</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>高学历延长与生命周期整体后移</strong>：高等教育毛入学率十年从26.5%跃升至60.2%，“本硕深造（研究生初婚26.97岁）+ 3至5年职场立足期”使全国初婚年龄十年陡增3.78岁，30岁以上登记人群逼近半数。
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">03 · 从“感性结合”转向“防御性风控精算”</span>
-                <span class="font-mono text-[11px] text-rose-400 font-bold">34.8x PIR · ¥101万育儿</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>高安居与高养育门槛触发棘轮效应</strong>：一线城市26.5—34.8倍房价收入比、超四分之一的房租收入比与53.8万—101.0万元直接育儿成本，迫使青年用“推迟婚龄”拉长原始资本积累时间。
-              </p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-sky-300">04 · 从“家庭内部消化”转向“性别与时间博弈”</span>
-                <span class="font-mono text-[11px] text-sky-400 font-bold">女+3.95岁 · 4.48x惩罚</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>高学历女性以晚婚规避母职惩罚</strong>：在49.0小时周工时与0–3岁入托率仅7.86%的夹击下，女性因婚育被动失晋升比例达男性4.48倍（13.0% vs 2.9%），女性十年初婚推迟斜率显著快于男性。
-              </p>
+            <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+              <span>信源：国家统计局 / 智联招聘调研 / 人大人口研究中心</span>
+              <span class="text-amber-400">点击其他时代卡继续查看 ➔</span>
             </div>
           </div>
         </div>
 
-        <!-- Right 6 Cols: 四大地域特征 (Regional Characteristics) -->
-        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-sky-400 relative overflow-hidden reveal-up">
-          <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
-            <div>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-sky-400 block">DIMENSION II · SPATIAL FOLDING</span>
-              <h3 class="font-serif text-2xl sm:text-3xl font-black text-white mt-0.5">当下中国婚育的“四大地域特征”</h3>
+        <!-- TAB PANEL 2: REGIONAL CHARACTERISTICS (四大地域格局交互展台) -->
+        <div id="synth-panel-region" class="synth-tab-panel hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch transition-all duration-500">
+          <!-- Left 5 Cols: Interactive Regional Selector Cards -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5">
+            <div data-reg-idx="0" class="synth-reg-card active cursor-pointer p-4 rounded-2xl border-l-4 border-l-rose-500 bg-white/[0.06] border border-white/10 hover:border-rose-400/50 transition-all relative overflow-hidden group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-rose-300">01 · 东北与京沪双峰极</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">黑 31.48岁 / 沪 30.10岁</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">先发工业化老龄化与超大城市极端生活成本殊途同归，构筑全国初婚推迟双巅峰。</p>
             </div>
-            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-6 font-serif font-black text-xs shrink-0 border-sky-400 text-sky-300">
-              山海图谱<br/><span class="text-[9px] font-mono">31 PROVINCES</span>
+
+            <div data-reg-idx="1" class="synth-reg-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-sky-400 bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-sky-300">02 · 珠三角与长三角虹吸极</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">粤 102.38万人 (全国第1)</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">青年人口大涌入撑起全国最大登记盘，但一线极高安居门槛导致个体婚前筹备周期极长。</p>
+            </div>
+
+            <div data-reg-idx="2" class="synth-reg-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-amber-400 bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-amber-300">03 · 中原人口基本盘挤压极</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">豫 47.13万对 · 礼俗叠加</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">河南、山东大体量登记背后，县城婚房刚需与高额传统彩礼形成沉重的一次性现金流门槛。</p>
+            </div>
+
+            <div data-reg-idx="3" class="synth-reg-card cursor-pointer p-4 rounded-2xl border-l-4 border-l-cyan-400 bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 transition-all relative overflow-hidden group opacity-80 hover:opacity-100">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-serif font-bold text-sm sm:text-base text-cyan-300">04 · 西南高原缓冲绿洲</span>
+                <span class="font-mono text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold">藏 14.92‰ · 长沙 6.5x PIR</span>
+              </div>
+              <p class="text-xs text-gray-300 line-clamp-2">多元宽松婚育文化与省会低房价双重托底，成为超大城市晚婚潮下罕见的早婚高率绿洲。</p>
             </div>
           </div>
 
-          <div class="space-y-5">
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">01 · 东北与京沪：“一北一东”双峰晚婚极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">黑 31.48岁 / 沪 30.10岁</span>
+          <!-- Right 7 Cols: Regional Interactive Inspector -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-white/10 relative overflow-hidden flex flex-col justify-between bg-gradient-to-br from-white/[0.04] to-black/60 shadow-2xl">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+                <div class="inline-flex items-center gap-2">
+                  <span id="reg-inspect-code" class="px-2.5 py-0.5 rounded font-mono text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-400/30">01 / REGION</span>
+                  <span id="reg-inspect-highlight" class="font-mono text-xs text-gray-300">黑 31.48岁 (全国最晚) · 沪 30.10岁</span>
+                </div>
+                <span class="text-[11px] font-mono text-gray-500">// 31省市空间地理折叠</span>
               </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>先发城镇化老龄化与超大城市高成本殊途同归</strong>：全国最晚婚并非仅在北上广——黑龙江（31.48岁）与辽宁（29.79岁）因高城镇化率、体制内高就业比重与青年外流居首；上海（30.10岁）则代表都市极限生活成本下的晚婚极值。
-              </p>
+
+              <h4 id="reg-inspect-title" class="font-serif text-2xl sm:text-3xl font-black text-white mb-4 leading-tight">
+                东北与京沪：“一北一东”双峰晚婚极
+              </h4>
+
+              <!-- Representative City Interactive Badges -->
+              <div class="mb-5">
+                <span class="text-[11px] font-mono text-gray-400 uppercase tracking-widest block mb-2">// 代表城市与样本实测数据</span>
+                <div id="reg-inspect-cities" class="flex flex-wrap gap-2">
+                  <!-- Injected via JS -->
+                </div>
+              </div>
+
+              <!-- Dual Regional Metric Cards -->
+              <div class="grid grid-cols-2 gap-4 mb-5">
+                <div class="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
+                  <span id="reg-stat-l-label" class="text-[11px] font-mono text-gray-400 block mb-0.5">核心省份城镇化率</span>
+                  <span id="reg-stat-l-val" class="font-mono text-xl sm:text-2xl font-bold text-rose-300">66.2%</span>
+                </div>
+                <div class="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
+                  <span id="reg-stat-r-label" class="text-[11px] font-mono text-gray-400 block mb-0.5">都市房价收入比</span>
+                  <span id="reg-stat-r-val" class="font-mono text-xl sm:text-2xl font-bold text-amber-300">26.5x</span>
+                </div>
+              </div>
+
+              <!-- Deep Regional Qualitative Analysis -->
+              <div class="p-4 rounded-2xl bg-black/40 border border-white/10 mb-4">
+                <div class="text-[11px] font-mono text-rose-300 uppercase mb-1.5">// 空间分化深层机制解析</div>
+                <p id="reg-inspect-analysis" class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                  全国最晚婚并非仅在超大城市：东北因先发工业化、高城镇化、独生子女率高及青年人口外流，形成了高初婚年龄与低结婚率；而京沪则代表着极端生活成本、高职场节奏与独立个体文化塑造的都市晚婚极值。
+                </p>
+              </div>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-sky-300">02 · 珠三角与长三角：青年虹吸与高成本分化极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">粤 102.38万人全国第1</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>人口流入撑起登记盘，但安居门槛拉长婚前准备</strong>：广东凭省外年轻劳动力涌入蝉联结婚登记榜首（51.19万对）；长三角（沪苏浙皖）则在“跨省通办”下呈现登记总量庞大、但初婚年龄全面向28—30岁逼近的态势。
-              </p>
+            <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-500">
+              <span>数据信源：国家统计局《中国统计年鉴2025》 / 民政部实测</span>
+              <span class="text-rose-400">点击其他地域卡继续探索 ➔</span>
             </div>
+          </div>
+        </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-amber-300">03 · 中原与华北县域：人口基本盘与礼俗挤压极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">豫 47.13万对 / 鲁 35.30万对</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>大体量登记背后的县域婚嫁现金流博弈</strong>：河南、山东、河北等人口大省构成全国结婚登记的中流砥柱，但县城婚房刚需与传统彩礼溢价叠加，正推动中部省份初婚年龄加速向28.5—29岁收敛（如河南已超29岁）。
-              </p>
+        <!-- TAB PANEL 3: COMPARATIVE MATRIX (全景对照矩阵) -->
+        <div id="synth-panel-matrix" class="synth-tab-panel hidden glass-card rounded-3xl p-6 sm:p-8 border border-white/10 transition-all duration-500">
+          <div class="flex flex-wrap items-center justify-between pb-4 mb-6 border-b border-white/10">
+            <div>
+              <span class="text-xs font-mono text-amber-400 uppercase tracking-widest block">// REGIONAL CROSS-COMPARISON</span>
+              <h4 class="font-serif text-2xl font-black text-white mt-0.5">中国四大婚育地域格局宏观对照矩阵</h4>
             </div>
+            <span class="text-xs font-mono text-gray-400">横向滑动查看全部指标 ➔</span>
+          </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-amber-300">04 · 西南高原与稳房价省会：早婚高率缓冲绿洲</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">藏14.92‰ · 黔13.71‰ · 长沙6.5x</span>
-              </div>
-              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                <strong>多元婚育文化与低居住成本的双重托底</strong>：西藏（结婚人口率14.92‰、初婚占比90.04%）、贵州（13.71‰、初婚27.26岁）、青海（13.12‰）稳居全国结婚率前三；长沙（房价收入比6.5x）则实证了稳房价对延缓晚婚的显著作用。
-              </p>
-            </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-white/10 text-gray-400 font-mono uppercase text-[11px]">
+                  <th class="py-3 px-4">地域圈层</th>
+                  <th class="py-3 px-4">核心代表省市</th>
+                  <th class="py-3 px-4">女性初婚均值</th>
+                  <th class="py-3 px-4">登记规模 / 结婚率</th>
+                  <th class="py-3 px-4">主要驱动机制</th>
+                  <th class="py-3 px-4">青年婚育应对策略</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 font-sans">
+                <tr class="hover:bg-white/[0.04] transition-colors">
+                  <td class="py-4 px-4 font-serif font-bold text-rose-300">01 · 东北与京沪双峰极</td>
+                  <td class="py-4 px-4 font-mono text-gray-200">黑龙江、辽宁、上海、北京</td>
+                  <td class="py-4 px-4 font-mono font-bold text-rose-400">30.10–31.48 岁 (极高)</td>
+                  <td class="py-4 px-4 font-mono text-gray-300">上海 7.55万对 / 黑 12.39万对</td>
+                  <td class="py-4 px-4 text-gray-300">先发老龄化 + 青年外流 + 极端房价 (26.5x)</td>
+                  <td class="py-4 px-4 text-gray-200">深度延迟成家、单身生活方式普及</td>
+                </tr>
+                <tr class="hover:bg-white/[0.04] transition-colors">
+                  <td class="py-4 px-4 font-serif font-bold text-sky-300">02 · 珠三角与长三角虹吸极</td>
+                  <td class="py-4 px-4 font-mono text-gray-200">广东、浙江、江苏</td>
+                  <td class="py-4 px-4 font-mono font-bold text-sky-400">28.50–29.20 岁 (推迟)</td>
+                  <td class="py-4 px-4 font-mono text-gray-300">广东 51.19万对 (全国第1)</td>
+                  <td class="py-4 px-4 text-gray-300">跨省年轻人口大量涌入，但购房租金门槛极高</td>
+                  <td class="py-4 px-4 text-gray-200">打拼延长婚前储蓄期、租房试婚</td>
+                </tr>
+                <tr class="hover:bg-white/[0.04] transition-colors">
+                  <td class="py-4 px-4 font-serif font-bold text-amber-300">03 · 中原与华北县域挤压极</td>
+                  <td class="py-4 px-4 font-mono text-gray-200">河南、山东、河北、安徽</td>
+                  <td class="py-4 px-4 font-mono font-bold text-amber-400">28.80–29.30 岁 (加速追赶)</td>
+                  <td class="py-4 px-4 font-mono text-gray-300">河南 47.13万对 / 山东 35.30万对</td>
+                  <td class="py-4 px-4 text-gray-300">人口基盘大，但县城买房刚需 + 10-25万彩礼</td>
+                  <td class="py-4 px-4 text-gray-200">全家集资凑启动资金、男性被动推迟</td>
+                </tr>
+                <tr class="hover:bg-white/[0.04] transition-colors">
+                  <td class="py-4 px-4 font-serif font-bold text-amber-300">04 · 西南高原与稳房价绿洲</td>
+                  <td class="py-4 px-4 font-mono text-gray-200">西藏、贵州、青海、湖南长沙</td>
+                  <td class="py-4 px-4 font-mono font-bold text-sky-300">26.50–27.50 岁 (相对早婚)</td>
+                  <td class="py-4 px-4 font-mono text-gray-300">西藏 14.92‰ / 贵州 13.71‰ (率全国最高)</td>
+                  <td class="py-4 px-4 text-gray-300">多元民族婚育文化 + 长沙低房价 (6.5x PIR)</td>
+                  <td class="py-4 px-4 text-gray-200">生活压力相对缓和，顺理成章较早成家</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -3614,5 +3767,214 @@
       });
     });
   </script>
+<script>
+    // =========================================================================
+    // CHAPTER 06 INTERACTIVE CONTROLLER (时代四大特征 & 地域四大格局联动逻辑)
+    // =========================================================================
+    (function initChapter6Interactions() {
+      const SYNTH_DATA = {
+        era: [
+          {
+            code: "01 / ERA",
+            title: "从“生存本能”转向“确定性契约”",
+            highlight: "76.4% 青年视稳定为第一锚点",
+            colorClass: "amber",
+            statL: { label: "求稳首选体制/国企", val: "69.9%" },
+            statR: { label: "16-24岁青年失业率峰值", val: "18.8%" },
+            past: "2010年生活逻辑：24岁顺理成章成家，以“双职工+家庭纽带”共同抵御初期生活不确定性，家庭被视为最小风险共担单位。",
+            now: "2025年时代逻辑：灵活就业达2亿人，面对职业生涯的高波动性，没有稳固岗位现金流前，绝不盲目进入长周期、高负债的家庭契约。",
+            analysis: "房价与租金只是成家成本的“分子”，而岗位稳定性与可持续收入预期才是“分母”。当年轻人对未来缺乏远期确定性时，推迟甚至拒绝成家就成为抵御个体财务断崖的最理性风控选择。"
+          },
+          {
+            code: "02 / ERA",
+            title: "从“24岁早婚普婚”迈入“30岁晚婚新纪元”",
+            highlight: "全国初婚十年延后 3.78岁 · 京沪破30岁",
+            colorClass: "cyan",
+            statL: { label: "高教毛入学率跃升", val: "26.5% ➔ 60.2%" },
+            statR: { label: "全国女性平均初婚", val: "24.89岁 ➔ 28.67岁" },
+            past: "2010年生命周期：高中或大专毕业后直接步入职场，22—24岁顺理成章进入恋爱并完成初婚登记，社会整体处于“普婚”轨道。",
+            now: "2025年生命周期：高校毕业生达1179万人，本硕深造（研究生初婚26.97岁）叠加3—5年立业积累期，初婚黄金窗口被系统性推后至28—32岁。",
+            analysis: "教育年限扩张推动了青年自我意识的觉醒与职业追求，但同时也大幅压缩了建立亲密关系的时间窗口；30岁以上登记人群已逼近半数，“晚婚”已从大城市精英现象扩散为全社会常态。"
+          },
+          {
+            code: "03 / ERA",
+            title: "从“感性结合”转向“防御性风控精算”",
+            highlight: "34.8倍房价收入比 · 101万元直接育儿账单",
+            colorClass: "rose",
+            statL: { label: "一线城市百城房价收入比", val: "26.5x – 34.8x" },
+            statR: { label: "上海0-17岁直接养育成本", val: "¥1,010,130" },
+            past: "2010年资产门槛：婚房首付多在普通工薪阶层承受区间，租金支出与学前育儿教育尚未形成不可逾越的刚性成本高墙。",
+            now: "2025年资产门槛：一线城市超四分之一房租占收入比，叠加百万级直接育儿开支，迫使年轻人用时间换空间，拉长储蓄准备期以对冲返贫风险。",
+            analysis: "婚姻由传统的两情相悦演化为一次严密的“家庭资产负债表与现金流测算”。高安居门槛与高养育成本形成了强烈的棘轮效应，推迟初婚成为年轻人规避财务脆弱性的理性选择。"
+          },
+          {
+            code: "04 / ERA",
+            title: "从“家庭内部消化”转向“性别与时间博弈”",
+            highlight: "周工时49.0小时 · 女性晋升惩罚达 4.48倍",
+            colorClass: "sky",
+            statL: { label: "企业周工时 (超法定11.4%)", val: "49.0 小时/周" },
+            statR: { label: "女性婚育晋升受阻比例", val: "13.0% (男仅2.9%)" },
+            past: "2010年分工模式：熟人社会隔代照料网络健全，家庭内部性别时间分工相对具有弹性托底，育儿对女性职业发展的冲击相对平缓。",
+            now: "2025年分工模式：异地打拼脱离熟人宗族支持，3岁以下托育率仅7.86%，超时加班与母职晋升惩罚直接逼迫女性推迟或放弃婚育。",
+            analysis: "当全社会陷入周工时49小时的“时间贫困”，女性面临生育即失去职场跃迁机会的残酷剪刀差（4.48倍）。高学历女性推迟结婚，实质上是为自身职业生存与经济独立争取安全空间。"
+          }
+        ],
+        region: [
+          {
+            code: "01 / REGION",
+            title: "东北与京沪：“一北一东”双峰晚婚极",
+            highlight: "黑 31.48岁 (全国最晚) · 沪 30.10岁",
+            cities: ["黑龙江 31.48岁", "辽宁 29.79岁", "上海 30.10岁", "北京 29.80岁"],
+            statL: { label: "黑龙江城镇化率", val: "66.2%" },
+            statR: { label: "上海房价收入比", val: "26.5x" },
+            analysis: "全国最晚婚并非仅在超大城市：东北因先发工业化、高城镇化、独生子女率高及青年人口外流，形成了高初婚年龄与低结婚率；而京沪则代表着极端生活成本、高职场节奏与独立个体文化塑造的都市晚婚极值。"
+          },
+          {
+            code: "02 / REGION",
+            title: "珠三角与长三角：青年虹吸与高成本分化极",
+            highlight: "广东 102.38万人 (总量全国第1) · 婚房首付门槛拉长周期",
+            cities: ["广东 102.38万人", "浙江 45.41万人", "深圳 34.8x PIR", "杭州 14.8x PIR"],
+            statL: { label: "广东跨省流入人口", val: "2962万人" },
+            statR: { label: "深圳百城房价收入比", val: "34.8 年" },
+            analysis: "人口净流入支撑了庞大的婚姻登记基数（广东连年全国第1），但珠三角与长三角核心城市居高不下的购房门槛，导致青年呈现出“结婚人口基数大、但个体准备周期极长”的结构性分化。"
+          },
+          {
+            code: "03 / REGION",
+            title: "中原与华北县域：人口基本盘与礼俗挤压极",
+            highlight: "河南 47.13万对 · 山东 35.30万对 · 县城婚房+彩礼双重挤压",
+            cities: ["河南 47.13万对", "山东 35.30万对", "河北 27.60万对", "彩礼 10-25万元"],
+            statL: { label: "中原初婚年龄均值", val: "超 29.0岁" },
+            statR: { label: "一次性彩礼折合收入", val: "当地 3-6年" },
+            analysis: "人口大省提供了全国结婚登记的“基本盘”，但在下沉市场，传统婚嫁中的县城商品房刚需与高额彩礼形成了高昂的“一次性启动门槛”，年轻男性必须延长打工储蓄期，使中部省份初婚年龄快速向29岁靠拢。"
+          },
+          {
+            code: "04 / REGION",
+            title: "西南高原与稳房价省会：早婚高率缓冲绿洲",
+            highlight: "西藏 14.92‰ (结婚率第1) · 贵州 13.71‰ · 长沙 6.5x PIR",
+            cities: ["西藏 14.92‰", "贵州 13.71‰ (初婚27.26岁)", "青海 13.12‰", "长沙 6.5x PIR"],
+            statL: { label: "西藏初婚登记占比", val: "90.04%" },
+            statR: { label: "长沙房价收入比", val: "仅 6.5x" },
+            analysis: "西藏、贵州、青海稳居全国结婚率前三，反映了多元婚育文化与相对宽松的宗族心理托底；而长沙凭借全国省会中最低的房价收入比（6.5x），成为超大城市中罕见的“青年安居低压绿洲”，实证了稳房价对维持婚育活力的关键支撑。"
+          }
+        ]
+      };
+
+      // Tab switcher logic
+      const tabBtns = document.querySelectorAll('.synth-nav-btn');
+      const panels = {
+        era: document.getElementById('synth-panel-era'),
+        region: document.getElementById('synth-panel-region'),
+        matrix: document.getElementById('synth-panel-matrix')
+      };
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const tabKey = this.dataset.tab;
+          tabBtns.forEach(b => {
+            b.className = 'synth-nav-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-serif font-bold transition-all flex items-center gap-2 text-gray-300 hover:text-white hover:bg-white/5 border border-transparent';
+          });
+          this.className = 'synth-nav-btn active px-5 py-2.5 rounded-xl text-xs sm:text-sm font-serif font-bold transition-all flex items-center gap-2 bg-gradient-to-r from-rose-600 to-rose-500 text-white shadow-lg shadow-rose-900/40';
+
+          Object.keys(panels).forEach(k => {
+            if (panels[k]) {
+              if (k === tabKey) {
+                panels[k].classList.remove('hidden');
+              } else {
+                panels[k].classList.add('hidden');
+              }
+            }
+          });
+        });
+      });
+
+      // Era Inspector logic
+      const eraCards = document.querySelectorAll('.synth-era-card');
+      eraCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const idx = parseInt(this.dataset.eraIdx, 10);
+          eraCards.forEach(c => {
+            c.classList.remove('active', 'bg-white/[0.06]');
+            c.classList.add('opacity-80', 'bg-white/[0.03]');
+          });
+          this.classList.add('active', 'bg-white/[0.06]');
+          this.classList.remove('opacity-80');
+
+          const d = SYNTH_DATA.era[idx];
+          if (!d) return;
+
+          const inspectCode = document.getElementById('era-inspect-code');
+          const inspectTitle = document.getElementById('era-inspect-title');
+          const inspectHighlight = document.getElementById('era-inspect-highlight');
+          const statLLabel = document.getElementById('era-stat-l-label');
+          const statLVal = document.getElementById('era-stat-l-val');
+          const statRLabel = document.getElementById('era-stat-r-label');
+          const statRVal = document.getElementById('era-stat-r-val');
+          const inspectPast = document.getElementById('era-inspect-past');
+          const inspectNow = document.getElementById('era-inspect-now');
+          const inspectAnalysis = document.getElementById('era-inspect-analysis');
+
+          if (inspectCode) inspectCode.textContent = d.code;
+          if (inspectTitle) inspectTitle.textContent = d.title;
+          if (inspectHighlight) inspectHighlight.textContent = d.highlight;
+          if (statLLabel) statLLabel.textContent = d.statL.label;
+          if (statLVal) statLVal.textContent = d.statL.val;
+          if (statRLabel) statRLabel.textContent = d.statR.label;
+          if (statRVal) statRVal.textContent = d.statR.val;
+          if (inspectPast) inspectPast.textContent = d.past;
+          if (inspectNow) inspectNow.textContent = d.now;
+          if (inspectAnalysis) inspectAnalysis.textContent = d.analysis;
+        });
+      });
+
+      // Regional Inspector logic
+      const regCards = document.querySelectorAll('.synth-reg-card');
+      function updateRegionInspector(idx) {
+        const d = SYNTH_DATA.region[idx];
+        if (!d) return;
+
+        const inspectCode = document.getElementById('reg-inspect-code');
+        const inspectTitle = document.getElementById('reg-inspect-title');
+        const inspectHighlight = document.getElementById('reg-inspect-highlight');
+        const inspectCities = document.getElementById('reg-inspect-cities');
+        const statLLabel = document.getElementById('reg-stat-l-label');
+        const statLVal = document.getElementById('reg-stat-l-val');
+        const statRLabel = document.getElementById('reg-stat-r-label');
+        const statRVal = document.getElementById('reg-stat-r-val');
+        const inspectAnalysis = document.getElementById('reg-inspect-analysis');
+
+        if (inspectCode) inspectCode.textContent = d.code;
+        if (inspectTitle) inspectTitle.textContent = d.title;
+        if (inspectHighlight) inspectHighlight.textContent = d.highlight;
+        if (statLLabel) statLLabel.textContent = d.statL.label;
+        if (statLVal) statLVal.textContent = d.statL.val;
+        if (statRLabel) statRLabel.textContent = d.statR.label;
+        if (statRVal) statRVal.textContent = d.statR.val;
+        if (inspectAnalysis) inspectAnalysis.textContent = d.analysis;
+
+        if (inspectCities) {
+          inspectCities.innerHTML = d.cities.map(c => 
+            `<span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-white/5 border border-white/10 text-white hover:border-rose-400/50 transition-colors">${c}</span>`
+          ).join('');
+        }
+      }
+
+      regCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const idx = parseInt(this.dataset.regIdx, 10);
+          regCards.forEach(c => {
+            c.classList.remove('active', 'bg-white/[0.06]');
+            c.classList.add('opacity-80', 'bg-white/[0.03]');
+          });
+          this.classList.add('active', 'bg-white/[0.06]');
+          this.classList.remove('opacity-80');
+
+          updateRegionInspector(idx);
+        });
+      });
+
+      // Initialize default regional cities
+      updateRegionInspector(0);
+    })();
+</script>
 </body>
 </html>
