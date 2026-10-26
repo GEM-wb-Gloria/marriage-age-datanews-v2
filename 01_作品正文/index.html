@@ -49,121 +49,6 @@
 
   <style>
     :root {
-    /* =========================================================================
-       V3.0 HAUTE COUTURE FASHION EDITORIAL PALETTE & GRADIENT INTERACTION ENGINE
-       Strict 2-3 Color System: Deep Pure Black, Fashion Rose-Pink, Pearl White
-       ========================================================================= */
-    :root {
-      --bg-primary: #060709;
-      --color-rose: #ff4d79;
-      --color-rose-glow: rgba(255, 77, 121, 0.45);
-      --color-rose-soft: #fda4af;
-      --color-pearl: #f8fafc;
-      --color-silver: #cbd5e1;
-    }
-
-    /* Interactive Cursor Spotlight Gradient */
-    .interactive-gradient-card {
-      position: relative;
-      background: rgba(14, 15, 22, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1rem;
-      transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-      overflow: hidden;
-    }
-    .interactive-gradient-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      background: radial-gradient(550px circle at var(--mouse-x, -300px) var(--mouse-y, -300px), rgba(255, 77, 121, 0.22), transparent 60%);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 1;
-    }
-    .interactive-gradient-card:hover::before {
-      opacity: 1;
-    }
-    .interactive-gradient-card:hover {
-      border-color: rgba(255, 77, 121, 0.5);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px -12px rgba(255, 77, 121, 0.28);
-    }
-
-    /* Dynamic Click Ripple Gradient Wave */
-    .ripple-gradient-effect {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 77, 121, 0.6) 0%, rgba(244, 63, 94, 0.2) 45%, transparent 75%);
-      transform: scale(0);
-      animation: rippleGradientAnim 0.75s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
-      pointer-events: none;
-      z-index: 50;
-    }
-    @keyframes rippleGradientAnim {
-      to {
-        transform: scale(1);
-        opacity: 0;
-      }
-    }
-
-    /* High-Fashion Editorial Photo Frame */
-    .fashion-photo-frame {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: #0d0e14;
-      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .fashion-photo-frame img {
-      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
-    }
-    .fashion-photo-frame:hover img {
-      transform: scale(1.04);
-      filter: contrast(105%) brightness(105%);
-    }
-    .fashion-photo-frame::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(6, 7, 10, 0.85) 95%);
-      pointer-events: none;
-    }
-    .fashion-photo-frame:hover {
-      border-color: rgba(255, 77, 121, 0.55);
-      box-shadow: 0 20px 50px -15px rgba(255, 77, 121, 0.35);
-    }
-
-    /* Radiant Text & Glow Classes */
-    .text-gradient-rose {
-      background: linear-gradient(135deg, #ffffff 15%, #ff4d79 70%, #fda4af 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .glow-rose {
-      text-shadow: 0 0 24px rgba(255, 77, 121, 0.45);
-    }
-    .glow-pearl {
-      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Unified Editorial Button */
-    .btn-fashion-rose {
-      background: linear-gradient(135deg, #ff4d79 0%, #e11d48 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 18px rgba(255, 77, 121, 0.35);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-fashion-rose:hover {
-      background: linear-gradient(135deg, #ff6b93 0%, #f43f5e 100%);
-      box-shadow: 0 8px 28px rgba(255, 77, 121, 0.55);
-      transform: translateY(-2px);
-    }
-
       --bg-primary: #07080c;
       --ink-cream: #f4f1ea;
     }
@@ -201,7 +86,7 @@
       pointer-events: none;
     }
 
-    .hollow-watermark {
+    .hollow-watermark-sky {
       -webkit-text-stroke: 1px rgba(56, 189, 248, 0.12);
       color: transparent;
       user-select: none;
@@ -329,7 +214,7 @@
       box-shadow: 0 0 25px rgba(244, 63, 94, 0.7);
     }
 
-    .glow-rose { text-shadow: 0 0 24px rgba(255, 77, 121, 0.45); }
+    .glow-cyan { text-shadow: 0 0 34px rgba(6, 182, 212, 0.5); }
     .glow-rose { text-shadow: 0 0 34px rgba(244, 63, 94, 0.5); }
     .glow-violet { text-shadow: 0 0 34px rgba(139, 92, 246, 0.5); }
 
@@ -417,7 +302,7 @@
           name: '深圳',
           province: '广东省',
           tier: '一线核心 · 居住成本榜首',
-          color: '#f8fafc',
+          color: '#8b5cf6',
           housingToIncome: 34.8,
           rentToIncome: 26.95,
           childcareCostYuan: 705720,
@@ -432,7 +317,7 @@
           name: '北京',
           province: '北京市',
           tier: '一线核心 · 双高挤压样本',
-          color: '#ff4d79',
+          color: '#06b6d4',
           housingToIncome: 26.8,
           rentToIncome: 24.52,
           childcareCostYuan: 936375,
@@ -447,7 +332,7 @@
           name: '杭州',
           province: '浙江省',
           tier: '强二线标杆',
-          color: '#ff4d79',
+          color: '#f59e0b',
           housingToIncome: 16.5,
           rentToIncome: 21.40,
           childcareCostYuan: 854942,
@@ -477,7 +362,7 @@
           name: '成都 (四川)',
           province: '四川省',
           tier: '西部新一线',
-          color: '#f8fafc',
+          color: '#10b981',
           housingToIncome: 10.5,
           rentToIncome: 16.80,
           childcareCostYuan: 489259,
@@ -914,7 +799,7 @@
   <!-- Top Reading Progress Bar & Editorial Masthead -->
   <div class="fixed top-0 left-0 right-0 z-50">
     <div class="h-[3px] w-full bg-white/5">
-      <div id="scroll-progress" class="h-full bg-gradient-to-r from-rose-600 via-rose-400 to-pink-300 scale-x-0"></div>
+      <div id="scroll-progress" class="h-full bg-gradient-to-r from-rose-500 via-cyan-400 to-sky-500 scale-x-0"></div>
     </div>
     <header class="backdrop-blur-xl bg-[#07080c]/80 border-b border-white/[0.07] px-6 py-3">
       <div class="max-w-7xl mx-auto flex items-center justify-between text-xs tracking-wider text-gray-400">
@@ -924,14 +809,14 @@
         </div>
         <nav class="hidden lg:flex items-center gap-4 xl:gap-5 font-mono text-[11px]">
           <a href="#section-hero" class="hover:text-rose-400 transition-colors">00/序幕</a>
-          <a href="#section-life-clock" class="hover:text-rose-400 transition-colors">01/青春时差尺</a>
-          <a href="#section-trend" class="hover:text-rose-400 transition-colors">02/十年曲线</a>
-          <a href="#section-china-map" class="text-rose-400 hover:text-rose-400 font-semibold transition-colors">03/白蓝中国版图</a>
+          <a href="#section-life-clock" class="hover:text-amber-300 transition-colors">01/青春时差尺</a>
+          <a href="#section-trend" class="hover:text-cyan-400 transition-colors">02/十年曲线</a>
+          <a href="#section-china-map" class="text-sky-400 hover:text-sky-300 font-semibold transition-colors">03/白蓝中国版图</a>
           <a href="#section-cost" class="hover:text-rose-400 transition-colors">04/居住与育儿</a>
-          <a href="#section-workplace" class="hover:text-rose-400 transition-colors">05/工时与母职</a>
-          <a href="#section-deep-drivers" class="text-rose-400 hover:text-rose-300 font-semibold transition-colors">06/就业与深层本质</a>
-          <a href="#section-synthesis" class="text-rose-400 hover:text-rose-300 font-semibold transition-colors">07/时代与地域总结</a>
-          <a href="#section-references" class="hover:text-rose-400 transition-colors">08/权威信源</a>
+          <a href="#section-workplace" class="hover:text-sky-400 transition-colors">05/工时与母职</a>
+          <a href="#section-deep-drivers" class="text-amber-300 hover:text-amber-200 font-semibold transition-colors">06/就业与深层本质</a>
+          <a href="#section-synthesis" class="text-rose-300 hover:text-rose-200 font-semibold transition-colors">07/时代与地域总结</a>
+          <a href="#section-references" class="hover:text-emerald-400 transition-colors">08/权威信源</a>
         </nav>
       </div>
     </header>
@@ -951,7 +836,7 @@
 
     <!-- Ambient Glows -->
     <div class="pointer-events-none absolute top-1/4 left-1/4 w-[480px] h-[480px] rounded-full bg-rose-500/12 blur-[150px]"></div>
-    <div class="pointer-events-none absolute bottom-1/4 right-1/4 w-[460px] h-[460px] rounded-full bg-rose-500/10 blur-[150px]"></div>
+    <div class="pointer-events-none absolute bottom-1/4 right-1/4 w-[460px] h-[460px] rounded-full bg-cyan-500/12 blur-[150px]"></div>
 
     <!-- Main Asymmetric Editorial Stage -->
     <div class="max-w-7xl mx-auto w-full px-6 my-auto z-10 py-8">
@@ -988,14 +873,14 @@
             <br />
             <span class="font-light text-gray-300 text-3xl sm:text-5xl xl:text-[52px] block mt-3">
               婚姻推迟背后的
-              <span class="underline decoration-rose-400/70 decoration-wavy decoration-2 underline-offset-8 text-white font-bold">城市成本结构</span>
+              <span class="underline decoration-cyan-400/70 decoration-wavy decoration-2 underline-offset-8 text-white font-bold">城市成本结构</span>
             </span>
           </h1>
 
           <!-- Editorial Lead with Hand-annotated Margin Note -->
           <div class="hero-anim opacity-0 translate-y-8 relative pl-5 border-l-2 border-rose-500/70 max-w-2xl mb-10">
             <p class="text-base sm:text-lg text-gray-300 font-light leading-relaxed">
-              这不是一场关于“年轻人不再相信爱情”的道德审判，而是一份冷峻的城市生存精算。十年间中国人平均初婚年龄从 <span class="font-mono text-white font-semibold">24.89岁</span> 跃升至 <span class="font-mono text-rose-400 font-semibold">28.67岁</span>；而在上海，市民政局公布的初婚年龄已越过 <span class="font-mono text-rose-400 font-bold">30.1岁</span>（男性 <span class="font-mono text-rose-400 font-bold">30.8岁</span>）。当一套房需要不吃不喝34.8年、养大一个孩子需要101万元、每周工作49小时，推迟结婚成了理性人在成本高墙前的本能防御。
+              这不是一场关于“年轻人不再相信爱情”的道德审判，而是一份冷峻的城市生存精算。十年间中国人平均初婚年龄从 <span class="font-mono text-white font-semibold">24.89岁</span> 跃升至 <span class="font-mono text-cyan-400 font-semibold">28.67岁</span>；而在上海，市民政局公布的初婚年龄已越过 <span class="font-mono text-rose-400 font-bold">30.1岁</span>（男性 <span class="font-mono text-rose-400 font-bold">30.8岁</span>）。当一套房需要不吃不喝34.8年、养大一个孩子需要101万元、每周工作49小时，推迟结婚成了理性人在成本高墙前的本能防御。
             </p>
           </div>
 
@@ -1012,133 +897,122 @@
             </div>
 
             <!-- Stat 2: +3.95 Female Delay -->
-            <div class="relative bg-white/[0.04] border border-rose-400/35 rounded-2xl p-5 sm:w-56 translate-y-2 rotate-1 hover:rotate-0 transition-transform">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-rose-300 block">CENSUS YEARBOOK · 2010→2020</span>
+            <div class="relative bg-white/[0.04] border border-cyan-400/35 rounded-2xl p-5 sm:w-56 translate-y-2 rotate-1 hover:rotate-0 transition-transform">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-300 block">CENSUS YEARBOOK · 2010→2020</span>
               <div class="flex items-baseline gap-1.5 mt-1">
-                <span class="font-mono text-2xl font-bold text-rose-400">+</span>
-                <span class="hero-counter font-mono text-5xl font-extrabold text-white glow-rose" data-target="3.95" data-decimals="2">0.00</span>
-                <span class="font-serif text-xl text-rose-400 font-bold">岁</span>
+                <span class="font-mono text-2xl font-bold text-cyan-400">+</span>
+                <span class="hero-counter font-mono text-5xl font-extrabold text-white glow-cyan" data-target="3.95" data-decimals="2">0.00</span>
+                <span class="font-serif text-xl text-cyan-400 font-bold">岁</span>
               </div>
-              <p class="text-xs text-gray-300 mt-1.5">全国女性十年初婚推迟幅度<br/><span class="text-rose-300/90 font-mono text-[11px]">24.00岁 → 27.95岁</span></p>
+              <p class="text-xs text-gray-300 mt-1.5">全国女性十年初婚推迟幅度<br/><span class="text-cyan-300/90 font-mono text-[11px]">24.00岁 → 27.95岁</span></p>
             </div>
 
             <!-- Stat 3: -54.7% Marriages -->
-            <div class="relative bg-white/[0.04] border border-rose-400/35 rounded-2xl p-5 sm:w-56 -rotate-1 hover:rotate-0 transition-transform">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-rose-300 block">MCA STATISTICAL BULLETIN</span>
+            <div class="relative bg-white/[0.04] border border-amber-400/35 rounded-2xl p-5 sm:w-56 -rotate-1 hover:rotate-0 transition-transform">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-amber-300 block">MCA STATISTICAL BULLETIN</span>
               <div class="flex items-baseline gap-1 mt-1">
-                <span class="font-mono text-2xl font-bold text-rose-400">-</span>
+                <span class="font-mono text-2xl font-bold text-amber-400">-</span>
                 <span class="hero-counter font-mono text-5xl font-extrabold text-white" data-target="54.7" data-decimals="1">0.0</span>
-                <span class="font-mono text-xl text-rose-400 font-bold">%</span>
+                <span class="font-mono text-xl text-amber-400 font-bold">%</span>
               </div>
-              <p class="text-xs text-gray-300 mt-1.5">全国结婚登记对数11年降幅<br/><span class="text-rose-300/90 font-mono text-[11px]">1346.9万对 → 610.6万对</span></p>
+              <p class="text-xs text-gray-300 mt-1.5">全国结婚登记对数11年降幅<br/><span class="text-amber-300/90 font-mono text-[11px]">1346.9万对 → 610.6万对</span></p>
             </div>
           </div>
         </div>
 
-        <!-- Right 5 Cols: Dual-Mode Haute Couture Visual Artifact (时代时尚大片封面 + 拟物化成家小票双模切换) -->
-        <div class="lg:col-span-5 flex flex-col items-center lg:items-end relative hero-anim opacity-0 translate-y-10">
-          
-          <!-- Mode Switcher Pills -->
-          <div class="flex items-center gap-2 p-1.5 rounded-full bg-white/[0.06] border border-white/10 mb-4 z-20 backdrop-blur-md shadow-xl">
-            <button id="hero-toggle-fashion" class="interactive-btn text-xs font-serif px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-bold transition-all shadow-lg flex items-center gap-1.5">
-              <span>✦</span> 时代封面 · FASHION
-            </button>
-            <button id="hero-toggle-receipt" class="interactive-btn text-xs font-serif px-4 py-1.5 rounded-full text-gray-300 hover:text-white transition-all flex items-center gap-1.5">
-              <span>🧾</span> 成家小票 · RECEIPT
-            </button>
+        <!-- Right 5 Cols: Creative Visual Artifact — "The Urban Marriage Cost Receipt" (一纸婚书背后的城市生存小票) -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end relative hero-anim opacity-0 translate-y-10">
+          <!-- Crimson Background Card (象征结婚红本底衬) -->
+          <div class="absolute inset-0 max-w-[380px] mx-auto bg-gradient-to-br from-rose-700 via-rose-900 to-[#2a0813] rounded-2xl -rotate-6 translate-x-3 translate-y-3 border border-rose-400/30 shadow-2xl p-6 flex flex-col justify-between pointer-events-none">
+            <div class="flex justify-between items-center text-rose-200/60 font-serif text-xs tracking-widest">
+              <span>中华人民共和国婚姻统计档案</span>
+              <span>NO. 2024-6105600</span>
+            </div>
+            <div class="my-auto text-center">
+              <div class="font-serif text-5xl font-black text-amber-200/20 tracking-[0.3em]">囍</div>
+            </div>
+            <div class="text-[10px] font-mono text-rose-200/50">
+              ARCHIVE: CHINA STATISTICAL YEARBOOK 2025
+            </div>
           </div>
 
-          <!-- Card Container with Perspective -->
-          <div class="relative w-full max-w-[400px] min-h-[560px] flex justify-center items-center">
-            
-            <!-- VIEW A: Haute Couture Fashion Cover Card -->
-            <div id="hero-card-fashion" class="interactive-gradient-card fashion-photo-frame w-full max-w-[390px] p-4 absolute inset-0 z-10 transition-all duration-700 transform rotate-1 hover:rotate-0 shadow-2xl">
-              <div class="relative w-full h-[410px] rounded-xl overflow-hidden mb-4">
-                <img src="assets/fashion_hero_cover.jpg" alt="VOGUE DATA Special Fashion Cover" class="w-full h-full object-cover object-center" />
-                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-rose-400/40 text-[10px] font-mono text-rose-300 tracking-wider">
-                  COVER STORY // 2026 ISSUE
+          <!-- Foreground Tilted Thermal Receipt (可交互热敏账单小票) -->
+          <div class="thermal-receipt w-full max-w-[380px] rounded-sm rotate-[2.5deg] z-10 font-mono">
+            <div class="receipt-zigzag-top -mt-3"></div>
+            <div class="px-6 py-5">
+              <!-- Receipt Header -->
+              <div class="text-center border-b-2 border-dashed border-zinc-400 pb-3 mb-4">
+                <div class="text-[10px] tracking-[0.25em] text-zinc-500 uppercase">METROPOLITAN SURVIVAL LEDGER</div>
+                <h2 class="font-serif text-xl font-black text-zinc-900 tracking-tight mt-0.5">当代青年城市成家成本账单</h2>
+                <div class="text-[11px] text-zinc-600 mt-1">打印时间：2024—2025 权威统计截面</div>
+              </div>
+
+              <!-- Receipt Line Items -->
+              <div class="space-y-2.5 text-xs border-b-2 border-dashed border-zinc-400 pb-4 mb-4">
+                <div class="flex justify-between items-baseline">
+                  <span class="font-semibold text-zinc-800">01. 上海0–17岁直接养育成本</span>
+                  <span class="font-bold text-rose-600">¥1,010,130</span>
                 </div>
-                <div class="absolute bottom-3 left-3 right-3 text-left">
-                  <div class="text-[10px] font-mono text-rose-200 uppercase tracking-widest">// BEIJING & SHANGHAI TWILIGHT</div>
-                  <h3 class="font-serif text-lg font-bold text-white leading-tight mt-0.5">
-                    “24岁是婚礼进行曲，还是合租房的第一份合同？”
-                  </h3>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 育娲人口研究2024版 (北京 ¥936,375 / 全国 ¥538,312)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">02. 深圳百城房价收入比</span>
+                  <span class="font-bold text-zinc-900">34.8 年</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 麟评居住大数据2024 (京 26.8x / 沪 26.5x / 长沙 6.5x)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">03. 一线城市房租占收入比</span>
+                  <span class="font-bold text-zinc-900">24.5%—27.0%</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 诸葛数据2024重点50城报告 (深26.95% / 沪25.28%)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">04. 企业就业人员周平均工时</span>
+                  <span class="font-bold text-rose-600">49.0 小时/周</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 国家统计局2023–2024实测 (超出44h法定上限5小时)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">05. 婚育阶段被动失去晋升</span>
+                  <span class="font-bold text-zinc-900">女13.0% / 男2.9%</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 智联招聘2024报告 (女性受冲击比例达男性 4.48倍)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">06. 岗位稳定为首要前提 / 青年失业率峰值</span>
+                  <span class="font-bold text-rose-600">76.4% / 18.8%</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 人大婚育调查第一锚点 &amp; 统计局24年8月16–24岁失业率</div>
+              </div>
+
+              <!-- Receipt Total & Cinnabar Stamp -->
+              <div class="flex items-center justify-between mb-3">
+                <div>
+                  <div class="text-[10px] text-zinc-500 uppercase">SETTLEMENT OUTCOME / 结算结果</div>
+                  <div class="font-serif text-base font-black text-zinc-900">初婚窗口系统性推迟</div>
+                  <div class="text-[11px] text-zinc-600">全国均值 28.67岁 · 上海 30.10岁</div>
+                </div>
+                <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-12 font-serif font-black text-xs">
+                  真实年鉴核验<br/><span class="text-[10px] font-mono">VERIFIED 100%</span>
                 </div>
               </div>
-              <div class="flex items-center justify-between text-xs px-2 pt-1 border-t border-white/10">
-                <span class="font-mono text-gray-400">PULITZER EDITORIAL NO. 10</span>
-                <span class="font-serif text-rose-400 font-bold">初婚年龄十年曲线专题 ➔</span>
+
+              <!-- Barcode graphic -->
+              <div class="pt-2 border-t border-zinc-300 flex flex-col items-center">
+                <div class="w-full h-7 bg-[repeating-linear-gradient(90deg,#18181b,#18181b_2px,transparent_2px,transparent_5px,#18181b_5px,#18181b_6px,transparent_6px,transparent_9px)] opacity-80"></div>
+                <span class="text-[10px] tracking-[0.35em] text-zinc-500 mt-1">NBS-2020-2025-MARRIAGE-LEDGER</span>
               </div>
             </div>
-
-            <!-- VIEW B: Thermal Receipt Card -->
-            <div id="hero-card-receipt" class="w-full max-w-[380px] absolute inset-0 z-0 opacity-0 pointer-events-none transition-all duration-700 transform -rotate-2">
-              <div class="thermal-receipt w-full rounded-sm shadow-2xl cursor-default group font-mono">
-                <div class="receipt-zigzag-top -mt-3"></div>
-                <div class="px-6 py-5">
-                  <div class="text-center border-b-2 border-dashed border-zinc-400 pb-3 mb-4">
-                    <div class="text-[10px] tracking-[0.25em] text-zinc-500 uppercase">METROPOLITAN SURVIVAL LEDGER</div>
-                    <h2 class="font-serif text-xl font-black text-zinc-900 tracking-tight mt-0.5">当代青年成家成本核算单</h2>
-                    <div class="text-[11px] text-zinc-600 mt-1">打印时间：2024—2025 权威统计截面</div>
-                  </div>
-                  <div class="space-y-2.5 text-xs border-b-2 border-dashed border-zinc-400 pb-4 mb-4 font-mono">
-                    <div class="flex justify-between items-baseline">
-                      <span class="font-semibold text-zinc-800">01. 上海0–17岁直接养育成本</span>
-                      <span class="font-bold text-rose-600">¥1,010,130</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 育娲人口研究2024版 (北京 ¥936,375 / 全国均值 ¥53.8万)</div>
-                    <div class="flex justify-between items-baseline pt-1">
-                      <span class="font-semibold text-zinc-800">02. 深圳百城房价收入比</span>
-                      <span class="font-bold text-zinc-900">34.8 年</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 麟评居住大数据2024 (京 26.8x / 沪 26.5x / 厦 25.0x)</div>
-                    <div class="flex justify-between items-baseline pt-1">
-                      <span class="font-semibold text-zinc-800">03. 一线城市房租占收入比</span>
-                      <span class="font-bold text-zinc-900">24.5%—27.0%</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 诸葛数据2024重点50城报告 (深26.95% / 京25.8% / 沪24.5%)</div>
-                    <div class="flex justify-between items-baseline pt-1">
-                      <span class="font-semibold text-zinc-800">04. 企业就业人员周平均工时</span>
-                      <span class="font-bold text-rose-600">49.0 小时/周</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 国家统计局2023–2024实测 (超出44h法定上限 11.4%)</div>
-                    <div class="flex justify-between items-baseline pt-1">
-                      <span class="font-semibold text-zinc-800">05. 婚育阶段被动失去晋升</span>
-                      <span class="font-bold text-zinc-900">女13.0% / 男2.9%</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 智联招聘2024报告 (女性受冲击比例达男性 4.48倍)</div>
-                    <div class="flex justify-between items-baseline pt-1">
-                      <span class="font-semibold text-zinc-800">06. 岗位稳定为首要前提 / 青年失业率峰值</span>
-                      <span class="font-bold text-rose-600">76.4% / 18.8%</span>
-                    </div>
-                    <div class="text-[10px] text-zinc-500 -mt-1">↳ 人大婚育调查第一锚点 &amp; 统计局24年8月16–24岁失业率</div>
-                  </div>
-                  <div class="flex items-center justify-between mb-3">
-                    <div>
-                      <div class="text-[10px] text-zinc-500 uppercase">SETTLEMENT OUTCOME / 结算结果</div>
-                      <div class="font-serif text-base font-black text-zinc-900">初婚窗口系统性推迟</div>
-                      <div class="text-[11px] text-zinc-600">全国均值 28.67岁 · 上海 30.10岁</div>
-                    </div>
-                    <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-12 font-serif font-black text-xs text-rose-700 border-2 border-rose-700 tracking-wider">
-                      真实年鉴核验<br/><span class="text-[10px] font-mono">VERIFIED 100%</span>
-                    </div>
-                  </div>
-                  <div class="pt-2 border-t border-zinc-300 flex flex-col items-center">
-                    <div class="w-full h-7 bg-[repeating-linear-gradient(90deg,#18181b,#18181b_2px,transparent_2px,transparent_5px,#18181b_5px,#18181b_6px,transparent_6px,transparent_9px)] opacity-80"></div>
-                    <span class="text-[10px] tracking-[0.35em] text-zinc-500 mt-1">NBS-2020-2025-MARRIAGE-LEDGER</span>
-                  </div>
-                </div>
-                <div class="receipt-zigzag-bottom -mb-3"></div>
-              </div>
-            </div>
-
+            <div class="receipt-zigzag-bottom -mb-3"></div>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- Tilted Kinetic Ticker Tape (斜切贯穿式数据电报跑马灯) -->
-    <div class="relative w-[104%] -left-[2%] -rotate-[1.1deg] bg-gradient-to-r from-rose-600 via-rose-500 to-pink-400 text-white py-2.5 shadow-2xl border-y border-white/20 z-20 mt-6">
+    <div class="relative w-[104%] -left-[2%] -rotate-[1.1deg] bg-gradient-to-r from-rose-600 via-rose-500 to-amber-500 text-white py-2.5 shadow-2xl border-y border-white/20 z-20 mt-6">
       <div class="marquee-track font-mono text-xs font-semibold tracking-wider uppercase">
         <span class="mx-6">✦ 《中国人口普查年鉴-2020》：全国平均初婚年龄十年从 24.89岁 升至 28.67岁 (+3.78岁)</span>
         <span class="mx-6">✦ 上海市民政局2024实测：全市初婚均值 30.1岁 (男 30.8岁 / 女 29.5岁)</span>
@@ -1168,13 +1042,13 @@
     <div class="max-w-6xl mx-auto relative z-10">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-up">
         <div>
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-2">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">
             <i data-lucide="Compass" class="w-3.5 h-3.5"></i>
             <span>INTERACTIVE PROLOGUE / THE SHIFTED YOUTH CLOCK</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
             被推迟的4年青春时差：<br/>
-            <span class="text-rose-300 font-normal">点选年龄刻度，对照2010与2024的两代人坐标</span>
+            <span class="text-amber-300 font-normal">点选年龄刻度，对照2010与2024的两代人坐标</span>
           </h2>
         </div>
         <p class="font-hand text-xl sm:text-2xl text-rose-300 md:text-right max-w-sm leading-snug">
@@ -1183,16 +1057,16 @@
       </div>
 
       <!-- Interactive Age Ruler Track -->
-      <div class="reveal-up glass-card rounded-3xl p-6 sm:p-10 border border-rose-400/25 relative">
+      <div class="reveal-up glass-card rounded-3xl p-6 sm:p-10 border border-amber-400/25 relative">
         <div class="text-xs font-mono text-gray-400 mb-6 flex items-center justify-between">
           <span>▼ 点击下方任意实测年龄锚点（24.00岁 → 30.80岁），查看代际错位详情：</span>
-          <span class="text-rose-300 hidden sm:inline">100% 国家统计局 &amp; 省市民政实测刻度</span>
+          <span class="text-amber-300 hidden sm:inline">100% 国家统计局 &amp; 省市民政实测刻度</span>
         </div>
 
         <!-- Ruler Line & Interactive Nodes -->
         <div class="relative py-8 my-2">
           <!-- Base Track Line -->
-          <div class="h-1.5 w-full rounded-full bg-gradient-to-r from-rose-600 via-rose-400 to-pink-300 opacity-75"></div>
+          <div class="h-1.5 w-full rounded-full bg-gradient-to-r from-cyan-500 via-amber-400 to-rose-500 opacity-75"></div>
 
           <!-- 6 Milestone Nodes -->
           <div id="life-clock-nodes" class="grid grid-cols-2 sm:grid-cols-6 gap-4 mt-4"></div>
@@ -1200,18 +1074,18 @@
 
         <!-- Dynamic Comparison Stage (2010 vs 2024 Split Card) -->
         <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-          <div class="md:col-span-4 p-6 rounded-2xl bg-rose-500/10 border border-rose-400/30 flex flex-col justify-between">
+          <div class="md:col-span-4 p-6 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-rose-300 block mb-1">PAST COORDINATE · 传统坐标对照</span>
+              <span class="text-[11px] font-mono uppercase tracking-widest text-cyan-300 block mb-1">PAST COORDINATE · 传统坐标对照</span>
               <div class="font-mono text-3xl font-extrabold text-white mb-2" id="clock-age-title">24.00 岁</div>
-              <span class="inline-block px-2.5 py-0.5 rounded bg-rose-400/20 text-rose-200 font-mono text-xs mb-3" id="clock-age-tag">
+              <span class="inline-block px-2.5 py-0.5 rounded bg-cyan-400/20 text-cyan-200 font-mono text-xs mb-3" id="clock-age-tag">
                 2010 全国女性初婚线
               </span>
               <p class="text-sm text-gray-200 leading-relaxed" id="clock-old-desc">
                 2010年：全国女性平均初婚年龄正好停在 24.00 岁（《中国人口普查年鉴-2020》实测），多数青年在24岁已完成婚嫁成家。
               </p>
             </div>
-            <div class="text-[11px] font-mono text-rose-300/70 mt-4 pt-3 border-t border-rose-400/20">
+            <div class="text-[11px] font-mono text-cyan-300/70 mt-4 pt-3 border-t border-cyan-400/20">
               代际基准：第七次全国人口普查长表回溯
             </div>
           </div>
@@ -1252,7 +1126,7 @@
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-10">
         <div class="lg:col-span-7 reveal-up">
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 mb-3">
             <span>CHAPTER 01 / CENSUS &amp; CIVIL AFFAIRS RECORDS</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
@@ -1285,7 +1159,7 @@
             <span class="w-3.5 h-[2px] bg-rose-500 inline-block"></span> 30.0岁晚婚分水岭
           </span>
           <span class="hidden sm:inline text-gray-600">|</span>
-          <span class="hidden sm:inline text-rose-400">● 仅绘制官方已公开实测节点</span>
+          <span class="hidden sm:inline text-emerald-400">● 仅绘制官方已公开实测节点</span>
         </div>
       </div>
 
@@ -1293,7 +1167,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div class="lg:col-span-9 glass-card rounded-3xl p-4 sm:p-7 relative">
           <!-- Floating Corner Tag -->
-          <div class="hidden sm:flex items-center gap-2 absolute -top-3.5 right-8 px-3 py-1 rounded-full bg-rose-500 text-slate-950 font-mono text-[11px] font-bold shadow-lg">
+          <div class="hidden sm:flex items-center gap-2 absolute -top-3.5 right-8 px-3 py-1 rounded-full bg-cyan-500 text-slate-950 font-mono text-[11px] font-bold shadow-lg">
             <span>FIG 1.1 · 国家统计局七普年鉴 × 民政统计公报</span>
           </div>
 
@@ -1301,7 +1175,7 @@
 
           <div class="mt-4 pt-3 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono text-gray-400">
             <div>
-              <span class="text-rose-400 font-semibold">[权威信源]</span>
+              <span class="text-cyan-400 font-semibold">[权威信源]</span>
               国家统计局《中国人口普查年鉴-2020》表5-5/5-6；民政部《2013–2024年民政事业发展统计公报》；上海市民政局、杭州市民政局、江苏省民政厅历年婚姻登记通报。
             </div>
             <div class="text-gray-500 shrink-0">未公开年份留空不插值</div>
@@ -1318,19 +1192,19 @@
             </p>
           </div>
 
-          <div class="glass-card rounded-2xl p-6 border-l-4 border-l-rose-400 lg:translate-x-2 -rotate-[1deg] hover:rotate-0 transition-transform">
-            <span class="text-[10px] font-mono uppercase tracking-widest text-rose-400 block mb-1">FEMALE ACCELERATION · 七普</span>
-            <div class="font-mono text-4xl font-black text-white mb-1">+3.95 <span class="text-sm font-normal text-rose-300">岁 / 十年</span></div>
+          <div class="glass-card rounded-2xl p-6 border-l-4 border-l-cyan-400 lg:translate-x-2 -rotate-[1deg] hover:rotate-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-cyan-400 block mb-1">FEMALE ACCELERATION · 七普</span>
+            <div class="font-mono text-4xl font-black text-white mb-1">+3.95 <span class="text-sm font-normal text-cyan-300">岁 / 十年</span></div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              2010—2020年间，全国女性平均初婚年龄从 <span class="text-white font-mono">24.00岁</span> 跃升至 <span class="text-rose-400 font-mono font-bold">27.95岁</span>，推迟速度显著快于男性（+3.63岁）。
+              2010—2020年间，全国女性平均初婚年龄从 <span class="text-white font-mono">24.00岁</span> 跃升至 <span class="text-cyan-400 font-mono font-bold">27.95岁</span>，推迟速度显著快于男性（+3.63岁）。
             </p>
           </div>
 
-          <div class="glass-card rounded-2xl p-6 border-l-4 border-l-rose-400 lg:-ml-4 rotate-[0.8deg] hover:rotate-0 transition-transform">
-            <span class="text-[10px] font-mono uppercase tracking-widest text-rose-400 block mb-1">VOLUME HALVED · 2013→2024</span>
-            <div class="font-mono text-4xl font-black text-white mb-1">610.6 <span class="text-sm font-normal text-rose-300">万对</span></div>
+          <div class="glass-card rounded-2xl p-6 border-l-4 border-l-amber-400 lg:-ml-4 rotate-[0.8deg] hover:rotate-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 block mb-1">VOLUME HALVED · 2013→2024</span>
+            <div class="font-mono text-4xl font-black text-white mb-1">610.6 <span class="text-sm font-normal text-amber-300">万对</span></div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              全国结婚登记数由2013年峰值 <span class="text-white font-mono">1346.9万对</span> 降至2024年 <span class="text-rose-400 font-mono font-bold">610.6万对</span>，11年间缩减逾一半（-54.7%）。
+              全国结婚登记数由2013年峰值 <span class="text-white font-mono">1346.9万对</span> 降至2024年 <span class="text-amber-400 font-mono font-bold">610.6万对</span>，11年间缩减逾一半（-54.7%）。
             </p>
           </div>
         </div>
@@ -1342,52 +1216,8 @@
        SECTION 2.5: 白省蓝海 · 中国31省市女性初婚年龄与结婚人口互动版图
        （高定海图画框 + 测绘准星 + 右侧错落田野档案夹与朱砂印章）
   ========================================================================== -->
-  
-  <!-- =========================================================================
-       VISUAL EDITORIAL SPREAD 01: THE BRIDAL VEIL & METROPOLIS HORIZON
-  ========================================================================== -->
-  <section class="relative py-12 px-6 max-w-7xl mx-auto z-10">
-    <div class="interactive-gradient-card p-6 sm:p-10 border border-white/10 rounded-3xl relative overflow-hidden group">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <!-- Visual Photo Frame (7 cols) -->
-        <div class="lg:col-span-7">
-          <div class="fashion-photo-frame h-[320px] sm:h-[420px] rounded-2xl overflow-hidden relative shadow-2xl">
-            <img src="assets/fashion_bridal_urban.jpg" alt="Conceptual Bridal and Metropolis Still" class="w-full h-full object-cover object-center" />
-            <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-rose-500/40 text-[11px] font-mono text-rose-300 tracking-wider">
-              VISUAL ESSAY // 视觉插页 01
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 text-left">
-              <span class="text-[11px] font-mono text-gray-300 uppercase tracking-widest">// ARCHITECTURAL POETICS</span>
-              <p class="font-serif text-white text-base sm:text-lg font-bold mt-1 leading-snug">
-                “白纱轻拂过冷峻的高楼与夜色，婚姻不再是无条件的起点，而是衡量未来的锚点。”
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Commentary (5 cols) -->
-        <div class="lg:col-span-5 flex flex-col justify-center space-y-5 text-left">
-          <div class="inline-flex items-center gap-2 text-rose-400 font-mono text-xs tracking-widest uppercase">
-            <span>✦</span> 空间折叠与生命契约
-          </div>
-          <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
-            推迟的不是爱，<br />
-            <span class="text-rose-400">是对未来生活确定性的守候</span>
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            从2010年的 <span class="text-white font-mono font-bold">24.89岁</span> 到2024年的 <span class="text-rose-400 font-mono font-bold">28.67岁</span>（一线城市突破30岁），这多出来的近4年青年时差，既是年轻人受教育年限的延长与自我意识的舒展，也是面对房贷、工时与养育成本时的集体防御。
-          </p>
-          <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 flex items-center justify-between text-xs">
-            <span class="text-gray-400">下章导览：31省市白省蓝海版图</span>
-            <span class="text-rose-400 font-serif font-bold">CHAPTER 02 ➔</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="section-china-map" class="relative py-28 sm:py-36 px-6 border-t border-white/[0.06] overflow-hidden">
-    <div data-parallax="-75" class="hollow-watermark font-serif font-black text-[15vw] leading-none absolute top-10 right-4 select-none">
+    <div data-parallax="-75" class="hollow-watermark-sky font-serif font-black text-[15vw] leading-none absolute top-10 right-4 select-none">
       31 PROVINCES
     </div>
     <div class="pointer-events-none absolute top-1/3 left-1/4 w-[560px] h-[560px] rounded-full bg-blue-500/12 blur-[160px]"></div>
@@ -1396,23 +1226,23 @@
       <!-- Section Header with Creative Editorial Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12">
         <div class="lg:col-span-8 reveal-up">
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-sky-400 mb-3">
             <i data-lucide="MapPin" class="w-3.5 h-3.5"></i>
             <span>CHAPTER 02 / CARTOGRAPHY OF MARRIAGE IN 31 PROVINCES</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
             白省蓝海 · 中国31省市婚育版图：<br />
-            <span class="text-rose-300 font-normal">点击任意省市，开启女性初婚年龄与结婚人口档案</span>
+            <span class="text-sky-300 font-normal">点击任意省市，开启女性初婚年龄与结婚人口档案</span>
           </h2>
         </div>
         <div class="lg:col-span-4 reveal-up">
-          <div class="p-4 rounded-2xl bg-rose-500/10 border border-rose-400/30 -rotate-1">
-            <div class="flex items-center justify-between text-xs font-mono text-rose-300 mb-1">
+          <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-400/30 -rotate-1">
+            <div class="flex items-center justify-between text-xs font-mono text-sky-300 mb-1">
               <span>✦ 视觉图例说明</span>
               <span>《中国统计年鉴2025》</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              地图以<strong class="text-white">纯白瓷色描绘中国31省市区</strong>，以<strong class="text-rose-300">深海蔚蓝渲染海洋背景</strong>。点击任意省份，右侧田野档案夹即刻加盖该省婚育印章并展开100%官方实测数据。
+              地图以<strong class="text-white">纯白瓷色描绘中国31省市区</strong>，以<strong class="text-sky-300">深海蔚蓝渲染海洋背景</strong>。点击任意省份，右侧田野档案夹即刻加盖该省婚育印章并展开100%官方实测数据。
             </p>
           </div>
         </div>
@@ -1424,35 +1254,35 @@
         <!-- Left 7 Cols: White Provinces on Deep Ocean Blue Cartographic Canvas -->
         <div class="lg:col-span-7 china-ocean-canvas china-ocean-graticule rounded-3xl p-4 sm:p-6 relative overflow-hidden flex flex-col justify-between">
           <!-- Cartographic Crosshairs (+) at Four Corners -->
-          <span class="pointer-events-none select-none absolute top-3 left-3 font-mono text-xs text-white/30">+</span>
-          <span class="pointer-events-none select-none absolute top-3 right-3 font-mono text-xs text-white/30">+</span>
-          <span class="pointer-events-none select-none absolute bottom-3 left-3 font-mono text-xs text-white/30">+</span>
-          <span class="pointer-events-none select-none absolute bottom-3 right-3 font-mono text-xs text-white/30">+</span>
+          <span class="pointer-events-none select-none absolute top-3 left-3 font-mono text-xs text-sky-200/40">+</span>
+          <span class="pointer-events-none select-none absolute top-3 right-3 font-mono text-xs text-sky-200/40">+</span>
+          <span class="pointer-events-none select-none absolute bottom-3 left-3 font-mono text-xs text-sky-200/40">+</span>
+          <span class="pointer-events-none select-none absolute bottom-3 right-3 font-mono text-xs text-sky-200/40">+</span>
 
           <!-- Top Cartographic Header Bar -->
-          <div class="flex flex-wrap items-center justify-between gap-3 z-10 pb-3 border-b border-white/10">
+          <div class="flex flex-wrap items-center justify-between gap-3 z-10 pb-3 border-b border-sky-200/20">
             <div class="flex items-center gap-2.5">
-              <span class="w-3.5 h-3.5 rounded-sm bg-white border-2 border-white/40 shadow-sm inline-block"></span>
+              <span class="w-3.5 h-3.5 rounded-sm bg-white border-2 border-sky-300 shadow-sm inline-block"></span>
               <span class="text-xs font-mono text-white font-semibold tracking-wide">
                 WHITE LANDMASS (纯白省域) × DEEP AZURE OCEAN (深海蓝底)
               </span>
             </div>
-            <div class="flex items-center gap-2 text-[11px] font-mono text-white bg-black/70 border border-rose-400/35 px-3 py-1 rounded-full">
-              <span class="w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+            <div class="flex items-center gap-2 text-[11px] font-mono text-sky-100 bg-sky-950/70 border border-sky-300/35 px-3 py-1 rounded-full">
+              <span class="w-2 h-2 rounded-full bg-sky-300 animate-ping"></span>
               <span>点击任意白省板块 · 调取各省女性婚龄与结婚率</span>
             </div>
           </div>
 
           <!-- Decorative Cartographic Compass Rose & Floating Extreme Badges -->
           <div class="pointer-events-none select-none absolute left-6 top-16 z-20 hidden sm:flex flex-col gap-2">
-            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white shadow-lg">
+            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-sky-300/30 text-[11px] font-mono text-sky-100 shadow-lg">
               <span class="text-rose-400 font-bold">● 晚婚极值：</span>黑龙江 31.48岁 / 上海 30.10岁(女29.5)
             </div>
-            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white shadow-lg">
-              <span class="text-rose-300 font-bold">● 结婚人口冠亚：</span>广东 102.38万人 / 河南 94.26万人
+            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-sky-300/30 text-[11px] font-mono text-sky-100 shadow-lg">
+              <span class="text-amber-300 font-bold">● 结婚人口冠亚：</span>广东 102.38万人 / 河南 94.26万人
             </div>
-            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white shadow-lg">
-              <span class="text-white font-mono font-bold">● 结婚率前三：</span>西藏 14.92‰ / 新疆 13.82‰ / 贵州 13.53‰
+            <div class="px-3 py-1.5 rounded-xl bg-slate-950/65 backdrop-blur-md border border-sky-300/30 text-[11px] font-mono text-sky-100 shadow-lg">
+              <span class="text-emerald-300 font-bold">● 结婚率前三：</span>西藏 14.92‰ / 新疆 13.82‰ / 贵州 13.53‰
             </div>
           </div>
 
@@ -1466,13 +1296,13 @@
           </div>
 
           <!-- Decorative Ocean Labels -->
-          <div class="pointer-events-none select-none absolute right-10 top-[42%] text-[11px] font-serif italic tracking-[0.25em] text-white/50 hidden sm:block">
+          <div class="pointer-events-none select-none absolute right-10 top-[42%] text-[11px] font-serif italic tracking-[0.25em] text-sky-100/50 hidden sm:block">
             黄 海 · YELLOW SEA
           </div>
-          <div class="pointer-events-none select-none absolute right-8 top-[58%] text-[11px] font-serif italic tracking-[0.25em] text-white/50 hidden sm:block">
+          <div class="pointer-events-none select-none absolute right-8 top-[58%] text-[11px] font-serif italic tracking-[0.25em] text-sky-100/50 hidden sm:block">
             东 海 · EAST CHINA SEA
           </div>
-          <div class="pointer-events-none select-none absolute right-[24%] bottom-[14%] text-[11px] font-serif italic tracking-[0.25em] text-white/50 hidden sm:block">
+          <div class="pointer-events-none select-none absolute right-[24%] bottom-[14%] text-[11px] font-serif italic tracking-[0.25em] text-sky-100/50 hidden sm:block">
             南 海 · SOUTH CHINA SEA
           </div>
 
@@ -1480,24 +1310,24 @@
           <div id="chart-china-map" class="w-full h-[460px] sm:h-[550px] z-10"></div>
 
           <!-- Bottom National Benchmark Strip inside Ocean Box -->
-          <div class="z-10 pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-white/90">
+          <div class="z-10 pt-3 border-t border-sky-200/20 flex flex-wrap items-center justify-between gap-3 text-[11px] font-mono text-sky-100/90">
             <div class="flex flex-wrap items-center gap-4">
               <span><strong class="text-white">2024全国合计：</strong>610.56万对 (结婚人口 1221.12万人 · 初婚 917.23万人)</span>
-              <span class="hidden sm:inline text-rose-300/50">|</span>
+              <span class="hidden sm:inline text-sky-300/50">|</span>
               <span><strong class="text-white">全国七普女性初婚基准：</strong>27.95岁</span>
             </div>
-            <span class="text-white/70">滚轮可缩放 · 点击省份切换档案</span>
+            <span class="text-sky-200/80">滚轮可缩放 · 点击省份切换档案</span>
           </div>
         </div>
 
         <!-- Right 5 Cols: Creative Field Dossier Panel with Dynamic Cinnabar Seal -->
         <div class="lg:col-span-5 flex flex-col justify-between">
-          <div class="glass-card rounded-3xl p-6 sm:p-7 border border-rose-400/35 relative overflow-hidden flex-1 flex flex-col justify-between shadow-2xl">
+          <div class="glass-card rounded-3xl p-6 sm:p-7 border border-sky-400/35 relative overflow-hidden flex-1 flex flex-col justify-between shadow-2xl">
             <!-- Top Folder Tab Bar -->
             <div class="flex items-start justify-between gap-4 pb-4 mb-4 border-b border-white/10 relative">
               <div>
                 <div class="flex items-center gap-2 mb-1.5">
-                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-rose-500/20 text-rose-300 border border-rose-400/30" id="map-prov-rank">
+                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-sky-500/20 text-sky-300 border border-sky-400/30" id="map-prov-rank">
                     结婚人口全国第 1 位
                   </span>
                   <span class="text-xs font-mono text-gray-400" id="map-prov-region">
@@ -1508,7 +1338,7 @@
                   <h3 class="font-serif text-3xl sm:text-4xl font-black text-white tracking-tight" id="map-prov-title">
                     广东省
                   </h3>
-                  <span class="text-xs font-mono text-rose-300" id="map-prov-pop">常住人口 12,780 万</span>
+                  <span class="text-xs font-mono text-sky-300" id="map-prov-pop">常住人口 12,780 万</span>
                 </div>
               </div>
 
@@ -1525,7 +1355,7 @@
                   <i data-lucide="Sparkles" class="w-3.5 h-3.5"></i>
                   <span>核心指标 A · 女性结婚年龄档案</span>
                 </span>
-                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-white/10 text-white" id="map-prov-age-badge">
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-white/10 text-sky-200" id="map-prov-age-badge">
                   省民政/妇联实测公布
                 </span>
               </div>
@@ -1544,7 +1374,7 @@
                   <span class="text-[11px] font-mono text-gray-400 block mt-1.5">全国七普总体基准：28.67岁</span>
                 </div>
               </div>
-              <p class="text-[11px] font-mono text-white/80 leading-relaxed mt-2" id="map-prov-age-source">
+              <p class="text-[11px] font-mono text-sky-200/90 leading-relaxed mt-2" id="map-prov-age-source">
                 信源：广东省妇联/民政统计披露（全省均值28.42岁：女27.72岁、男29.13岁；珠三角核心区初婚超29岁）
               </p>
             </div>
@@ -1552,11 +1382,11 @@
             <!-- Dossier Block 2: 2024 Marriage Rate & Population Ledger (《中国统计年鉴2025》) -->
             <div class="p-4 rounded-2xl bg-white/[0.035] border border-white/10 mb-4">
               <div class="flex items-center justify-between mb-3">
-                <span class="text-xs font-mono uppercase tracking-wider text-rose-400 flex items-center gap-1.5">
+                <span class="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
                   <i data-lucide="HeartHandshake" class="w-3.5 h-3.5"></i>
                   <span>核心指标 B · 2024结婚率与结婚人口</span>
                 </span>
-                <span class="text-[11px] font-mono text-rose-400">《中国统计年鉴2025》实测</span>
+                <span class="text-[11px] font-mono text-emerald-400">《中国统计年鉴2025》实测</span>
               </div>
 
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-3">
@@ -1567,17 +1397,17 @@
                 </div>
                 <div class="p-2.5 rounded-xl bg-black/30 border border-white/[0.06]">
                   <span class="text-[11px] text-gray-400 block">结婚登记对数</span>
-                  <span class="font-mono text-lg font-extrabold text-rose-400" id="map-prov-couples">51.19万对</span>
+                  <span class="font-mono text-lg font-extrabold text-cyan-400" id="map-prov-couples">51.19万对</span>
                   <span class="text-[10px] font-mono text-gray-500 block">民政部门登记</span>
                 </div>
                 <div class="p-2.5 rounded-xl bg-black/30 border border-white/[0.06]">
                   <span class="text-[11px] text-gray-400 block">结婚人口率</span>
-                  <span class="font-mono text-lg font-extrabold text-rose-400" id="map-prov-pop-rate">8.01‰</span>
+                  <span class="font-mono text-lg font-extrabold text-amber-400" id="map-prov-pop-rate">8.01‰</span>
                   <span class="text-[10px] font-mono text-gray-500 block">全国均值 8.67‰</span>
                 </div>
                 <div class="p-2.5 rounded-xl bg-black/30 border border-white/[0.06]">
                   <span class="text-[11px] text-gray-400 block">粗结婚对数率</span>
-                  <span class="font-mono text-lg font-extrabold text-rose-400" id="map-prov-couple-rate">4.01‰</span>
+                  <span class="font-mono text-lg font-extrabold text-sky-400" id="map-prov-couple-rate">4.01‰</span>
                   <span class="text-[10px] font-mono text-gray-500 block">全国均值 4.34‰</span>
                 </div>
               </div>
@@ -1585,17 +1415,17 @@
               <!-- First Marriage vs Remarriage Film Strip Bar -->
               <div class="mt-3 pt-2.5 border-t border-white/[0.06]">
                 <div class="flex items-center justify-between text-xs font-mono mb-1.5">
-                  <span class="text-rose-300 font-semibold" id="map-prov-first-text">初婚人数：83.19 万人 (81.3%)</span>
+                  <span class="text-sky-300 font-semibold" id="map-prov-first-text">初婚人数：83.19 万人 (81.3%)</span>
                   <span class="text-rose-300 font-semibold" id="map-prov-remarry-text">再婚人数：19.19 万人 (18.7%)</span>
                 </div>
                 <div class="w-full h-3 rounded-full bg-rose-500/35 overflow-hidden flex p-0.5">
-                  <div id="map-prov-first-bar" class="h-full rounded-full bg-gradient-to-r from-rose-600 via-rose-500 to-pink-400 transition-all duration-500" style="width: 81.3%"></div>
+                  <div id="map-prov-first-bar" class="h-full rounded-full bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 transition-all duration-500" style="width: 81.3%"></div>
                 </div>
               </div>
             </div>
 
             <!-- Editorial Insight Note -->
-            <div class="p-3.5 rounded-xl bg-rose-500/10 border-l-4 border-l-rose-400 text-xs text-gray-200 leading-relaxed mb-4" id="map-prov-note">
+            <div class="p-3.5 rounded-xl bg-sky-500/10 border-l-4 border-l-sky-400 text-xs text-gray-200 leading-relaxed mb-4" id="map-prov-note">
               2024年结婚登记51.19万对（结婚人口102.38万人），连续多年稳居全国第一；初婚占比高达81.26%。
             </div>
 
@@ -1603,7 +1433,7 @@
             <div class="pt-3 border-t border-white/10">
               <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 mb-2">
                 <span>快速检索31省市（按2024结婚人口排序）：</span>
-                <span class="text-rose-400">双向联动白蓝地图</span>
+                <span class="text-sky-400">双向联动白蓝地图</span>
               </div>
               <div id="province-pill-container" class="flex flex-wrap gap-1.5 max-h-[120px] overflow-y-auto pr-1"></div>
             </div>
@@ -1634,7 +1464,7 @@
           </h2>
         </div>
         <div class="lg:col-span-4 reveal-up">
-          <p class="font-hand text-2xl text-rose-300 leading-snug">
+          <p class="font-hand text-2xl text-cyan-300 leading-snug">
             “OLS回归实测：城市房价收入比与平均初婚年龄皮尔逊相关系数高达 r = 0.9450（R² = 0.893）。”
           </p>
         </div>
@@ -1648,7 +1478,7 @@
               <span class="inline-block w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
               <span>X轴=2024房价收入比(倍) · Y轴=初婚年龄(岁) · 气泡大小=0–17岁养育成本(万元)</span>
             </div>
-            <span class="text-[11px] font-mono text-rose-300 bg-rose-500/15 px-2.5 py-1 rounded-full border border-rose-400/30">
+            <span class="text-[11px] font-mono text-cyan-300 bg-cyan-500/15 px-2.5 py-1 rounded-full border border-cyan-500/30">
               悬浮气泡或点击右侧拼贴卡对比城市账单
             </span>
           </div>
@@ -1666,18 +1496,18 @@
                     0–17岁直接养育成本：1,010,130 元
                   </span>
                 </div>
-                <p id="detail-city-source" class="text-[11px] font-mono text-rose-400 mt-1">
+                <p id="detail-city-source" class="text-[11px] font-mono text-cyan-400 mt-1">
                   婚龄口径：上海市民政局2024年度婚姻登记统计（男30.8岁 / 女29.5岁）
                 </p>
               </div>
               <div class="flex items-center gap-5 shrink-0 font-mono text-xs">
                 <div>
                   <span class="text-gray-500 block">房价收入比</span>
-                  <span id="detail-city-pir" class="text-lg font-extrabold text-rose-400">26.5倍</span>
+                  <span id="detail-city-pir" class="text-lg font-extrabold text-cyan-400">26.5倍</span>
                 </div>
                 <div>
                   <span class="text-gray-500 block">租金收入比</span>
-                  <span id="detail-city-rent" class="text-lg font-extrabold text-rose-400">25.28%</span>
+                  <span id="detail-city-rent" class="text-lg font-extrabold text-sky-400">25.28%</span>
                 </div>
                 <div>
                   <span class="text-gray-500 block">初婚均值</span>
@@ -1694,16 +1524,16 @@
                   <span id="detail-child-bar-label" class="text-rose-300 font-bold">100.0% (全国均值 53.83万)</span>
                 </div>
                 <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                  <div id="detail-child-bar" class="h-full bg-gradient-to-r from-rose-600 to-pink-400 transition-all duration-500" style="width: 100%"></div>
+                  <div id="detail-child-bar" class="h-full bg-gradient-to-r from-amber-400 to-rose-500 transition-all duration-500" style="width: 100%"></div>
                 </div>
               </div>
               <div>
                 <div class="flex justify-between text-[11px] text-gray-400 mb-1">
                   <span>买房不吃不喝年限相对于深圳极值 (34.8年)</span>
-                  <span id="detail-pir-bar-label" class="text-rose-300 font-bold">76.1% (百城均值 10.3年)</span>
+                  <span id="detail-pir-bar-label" class="text-cyan-300 font-bold">76.1% (百城均值 10.3年)</span>
                 </div>
                 <div class="w-full h-2 rounded-full bg-white/10 overflow-hidden">
-                  <div id="detail-pir-bar" class="h-full bg-gradient-to-r from-rose-500 to-pink-400 transition-all duration-500" style="width: 76.1%"></div>
+                  <div id="detail-pir-bar" class="h-full bg-gradient-to-r from-cyan-400 to-sky-500 transition-all duration-500" style="width: 76.1%"></div>
                 </div>
               </div>
             </div>
@@ -1721,7 +1551,7 @@
               为什么房价回调未能拉低初婚年龄？
             </h3>
             <p class="text-xs text-gray-300 leading-relaxed">
-              2024年全国百城房价收入比均值虽回落至 <span class="text-rose-400 font-mono font-bold">10.3倍</span>，但一线城市绝对门槛（26.5—34.8倍）与百万级直接育儿账单未降，青年婚育决策呈现显著的“向上刚性”。点击下方4组代表样本联动左侧气泡：
+              2024年全国百城房价收入比均值虽回落至 <span class="text-cyan-400 font-mono font-bold">10.3倍</span>，但一线城市绝对门槛（26.5—34.8倍）与百万级直接育儿账单未降，青年婚育决策呈现显著的“向上刚性”。点击下方4组代表样本联动左侧气泡：
             </p>
           </div>
 
@@ -1739,10 +1569,10 @@
 
           <!-- Staggered Card 02 -->
           <div data-city="深圳" class="city-card-trigger cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-violet-500 lg:translate-x-2 -rotate-[1deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-500/20 transition-colors">02</span>
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-sky-500/15 transition-colors">02</span>
             <div class="flex items-center justify-between mb-1.5">
               <span class="font-serif font-bold text-base text-white">居住最贵极 · 深圳</span>
-              <span class="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-white font-mono font-bold">房价收入比 34.8x</span>
+              <span class="font-mono text-xs px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">房价收入比 34.8x</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
               2024年深圳房价收入比（34.8倍）与租金收入比（26.95%）双居全国第一，房租吞噬逾四分之一可支配收入。
@@ -1750,11 +1580,11 @@
           </div>
 
           <!-- Staggered Card 03 -->
-          <div data-city="杭州" class="city-card-trigger cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:-ml-3 rotate-[0.8deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-500/20 transition-colors">03</span>
+          <div data-city="杭州" class="city-card-trigger cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-amber-400 lg:-ml-3 rotate-[0.8deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-amber-500/15 transition-colors">03</span>
             <div class="flex items-center justify-between mb-1.5">
               <span class="font-serif font-bold text-base text-white">强二线高成本极 · 杭州 &amp; 南京</span>
-              <span class="font-mono text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">养育 85.5万 / 72.1万</span>
+              <span class="font-mono text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">养育 85.5万 / 72.1万</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
               浙江（854,942元）与江苏（720,616元）养育成本分列全国第3、第4；杭州初婚年龄升至男28.8岁、女27.5岁。
@@ -1762,11 +1592,11 @@
           </div>
 
           <!-- Staggered Card 04 -->
-          <div data-city="长沙 (湖南)" class="city-card-trigger cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:translate-x-1 -rotate-[0.8deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-500/20 transition-colors">04</span>
+          <div data-city="长沙 (湖南)" class="city-card-trigger cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-emerald-400 lg:translate-x-1 -rotate-[0.8deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-emerald-500/15 transition-colors">04</span>
             <div class="flex items-center justify-between mb-1.5">
               <span class="font-serif font-bold text-base text-white">房价友好对照组 · 长沙 &amp; 成都</span>
-              <span class="font-mono text-xs px-2 py-0.5 rounded bg-white/10 text-white font-mono font-bold">房价收入比 6.5x–10.5x</span>
+              <span class="font-mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">房价收入比 6.5x–10.5x</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
               长沙房价收入比仅约6.5倍，租金收入比12.10%低于全国均值，印证了稳房价对青年婚龄推迟的缓冲效应。
@@ -1788,7 +1618,7 @@
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-10">
         <div class="lg:col-span-7 reveal-up">
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-sky-400 mb-3">
             <span>CHAPTER 04 / TIME POVERTY &amp; MOTHERHOOD PENALTY</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
@@ -1798,13 +1628,13 @@
         </div>
         <div class="lg:col-span-5 reveal-up">
           <!-- Creative Overtime Meter Strip -->
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 rotate-1">
+          <div class="p-4 rounded-2xl bg-sky-500/10 border border-sky-400/30 rotate-1">
             <div class="flex justify-between text-xs font-mono mb-1.5">
-              <span class="text-rose-300">《劳动法》周工时上限：44.0h</span>
+              <span class="text-amber-300">《劳动法》周工时上限：44.0h</span>
               <span class="text-rose-400 font-bold">2024统计局实测：49.0h (+5.0h越界)</span>
             </div>
             <div class="w-full h-3 rounded-full bg-black/50 overflow-hidden flex items-center relative">
-              <div class="h-full bg-gradient-to-r from-rose-500 to-pink-400" style="width: 82%"></div>
+              <div class="h-full bg-gradient-to-r from-cyan-400 to-sky-500" style="width: 82%"></div>
               <div class="h-full bg-rose-500 animate-pulse" style="width: 18%"></div>
             </div>
             <p class="text-[11px] font-mono text-gray-300 mt-2">
@@ -1832,7 +1662,7 @@
 
           <div class="mt-4 pt-3 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] font-mono text-gray-400">
             <div>
-              <span class="text-rose-400 font-semibold">[权威信源]</span>
+              <span class="text-sky-400 font-semibold">[权威信源]</span>
               智联招聘《2024中国女性职场现状调查报告》；国家统计局《全国企业就业人员周平均工作时间》（2018–2024）；民政部《民政事业发展统计公报》。
             </div>
             <div class="text-gray-500 shrink-0">100% 原始报告百分比与统计局实测工时</div>
@@ -1841,21 +1671,6 @@
 
         <!-- Deconstructed Editorial Callouts on Right -->
         <div class="lg:col-span-4 flex flex-col justify-between gap-6">
-          
-          <!-- Fashion Editorial Portrait: Late Night Urban Solitude -->
-          <div class="interactive-gradient-card fashion-photo-frame p-2.5 relative shadow-2xl group">
-            <div class="relative w-full h-[220px] rounded-xl overflow-hidden">
-              <img src="assets/fashion_urban_portrait.jpg" alt="Urban Professional Woman at Night" class="w-full h-full object-cover object-center" />
-              <div class="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-rose-500/40 text-[10px] font-mono text-rose-300">
-                FASHION ESSAY // 深夜工位
-              </div>
-              <div class="absolute bottom-2.5 left-2.5 right-2.5 text-left">
-                <p class="font-serif text-xs text-white font-bold leading-snug drop-shadow-md">
-                  “全周工时49小时：当加班成为常态，独处成了最奢侈的治愈。”
-                </p>
-              </div>
-            </div>
-          </div>
           <div class="glass-card rounded-3xl p-6 border-t-4 border-t-rose-500 lg:-ml-4 -rotate-1 hover:rotate-0 transition-transform relative overflow-hidden">
             <div class="pointer-events-none select-none absolute -right-3 -bottom-6 font-mono font-black text-8xl text-rose-500/10">4.5×</div>
             <div class="text-xs font-mono uppercase tracking-widest text-rose-400 mb-2">
@@ -1865,7 +1680,7 @@
               因婚育被动失去晋升：<br/>女性占比是男性的 <span class="text-rose-400 font-mono">4.48倍</span>
             </h4>
             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-4">
-              智联招聘2024实测显示，<span class="text-rose-400 font-mono font-bold">48.8%</span> 的女性在求职时曾被盘问婚育状况（男性仅11.5%）；<span class="text-rose-400 font-mono font-bold">13.0%</span> 的女性因处于婚育阶段被动失去晋升（男性仅 <span class="text-rose-400 font-mono">2.9%</span>）。
+              智联招聘2024实测显示，<span class="text-rose-400 font-mono font-bold">48.8%</span> 的女性在求职时曾被盘问婚育状况（男性仅11.5%）；<span class="text-rose-400 font-mono font-bold">13.0%</span> 的女性因处于婚育阶段被动失去晋升（男性仅 <span class="text-cyan-400 font-mono">2.9%</span>）。
             </p>
             <div class="p-3 rounded-xl bg-black/35 border border-white/10 flex items-center justify-between text-xs font-mono">
               <span class="text-gray-400">2024职场男女平均月薪</span>
@@ -1873,19 +1688,19 @@
             </div>
           </div>
 
-          <div class="glass-card rounded-3xl p-6 border-t-4 border-t-rose-400 lg:translate-x-2 rotate-1 hover:rotate-0 transition-transform">
-            <div class="text-xs font-mono uppercase tracking-widest text-rose-400 mb-2">
+          <div class="glass-card rounded-3xl p-6 border-t-4 border-t-cyan-400 lg:translate-x-2 rotate-1 hover:rotate-0 transition-transform">
+            <div class="text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">
               TIME POVERTY · 49小时工时越界
             </div>
             <h4 class="font-serif text-2xl font-bold text-white mb-3 leading-snug">
-              周均工时升至 <span class="text-rose-400 font-mono">49.0h</span>，<br/>闲暇剥夺加剧婚恋推迟
+              周均工时升至 <span class="text-cyan-400 font-mono">49.0h</span>，<br/>闲暇剥夺加剧婚恋推迟
             </h4>
             <p class="text-xs sm:text-sm text-gray-300 leading-relaxed mb-4">
-              国家统计局数据显示，全国企业就业人员周平均工时由2018年的 <span class="text-rose-400 font-mono font-semibold">46.0小时</span> 攀升至2023—2024年的 <span class="text-rose-400 font-mono font-semibold">49.0小时</span>。时间贫困直接压缩了城市青年的社交与情感建立空间。
+              国家统计局数据显示，全国企业就业人员周平均工时由2018年的 <span class="text-cyan-400 font-mono font-semibold">46.0小时</span> 攀升至2023—2024年的 <span class="text-rose-400 font-mono font-semibold">49.0小时</span>。时间贫困直接压缩了城市青年的社交与情感建立空间。
             </p>
             <div class="p-3 rounded-xl bg-black/35 border border-white/10 flex items-center justify-between text-xs font-mono">
               <span class="text-gray-400">认为“经济负担重”抑制生育</span>
-              <span class="text-rose-300 font-bold">女 49.6% / 男 44.8%</span>
+              <span class="text-cyan-300 font-bold">女 49.6% / 男 44.8%</span>
             </div>
           </div>
         </div>
@@ -1901,24 +1716,24 @@
     <div data-parallax="75" class="hollow-watermark font-mono font-black text-[15vw] leading-none absolute top-12 left-0 select-none">
       JOB CERTAINTY
     </div>
-    <div class="pointer-events-none absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-rose-500/10 blur-[160px]"></div>
+    <div class="pointer-events-none absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-amber-500/10 blur-[160px]"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
       <!-- Editorial Header -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-12">
         <div class="lg:col-span-8 reveal-up">
-          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400 mb-3">
             <i data-lucide="Layers" class="w-3.5 h-3.5"></i>
             <span>CHAPTER 05 / BEYOND HOUSING: JOB STABILITY &amp; FIVE DEEP STRUCTURAL DRIVERS</span>
           </div>
           <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
-            为什么<span class="text-rose-400 underline decoration-wavy decoration-rose-400/60 underline-offset-8">就业与岗位稳定性</span><br />
+            为什么<span class="text-amber-400 underline decoration-wavy decoration-amber-400/60 underline-offset-8">就业与岗位稳定性</span><br />
             才是决定青年敢不敢结婚的“第一锚点”？
           </h2>
         </div>
         <div class="lg:col-span-4 reveal-up">
-          <div class="editorial-note p-4 rounded-r-xl -rotate-1 border-l-rose-400">
-            <div class="text-[11px] font-mono text-rose-300 uppercase mb-1">// 深度归因 · 从表面价格到制度本质</div>
+          <div class="editorial-note p-4 rounded-r-xl -rotate-1 border-l-amber-400">
+            <div class="text-[11px] font-mono text-amber-300 uppercase mb-1">// 深度归因 · 从表面价格到制度本质</div>
             <p class="font-hand text-xl text-gray-200 leading-snug">
               “房价与房租只是婚育账单的‘分子’，而一份看得见未来五年现金流的稳定工作，才是撑起整个家庭契约的‘分母’。”
             </p>
@@ -1945,7 +1760,7 @@
         <!-- Left 7 Cols: ECharts Multi-Dimensional Deep Driver Chart + Interactive Inspector -->
         <div class="lg:col-span-7 glass-card rounded-3xl p-4 sm:p-7 lg:sticky lg:top-20">
           <div class="flex flex-wrap items-center justify-between gap-3 pb-3 mb-2 border-b border-white/[0.06]">
-            <span id="deep-chart-subtitle" class="text-xs font-mono text-rose-300">
+            <span id="deep-chart-subtitle" class="text-xs font-mono text-amber-300">
               ● 实证对比：工作与收入预期稳定（76.4%）超越购房（61.8%）成为青年步入婚姻第一前提
             </span>
             <span class="text-[11px] font-mono text-gray-400">点击右侧 5 大深层维度卡片切换解剖镜</span>
@@ -1954,13 +1769,13 @@
           <div id="chart-deep-drivers" class="w-full h-[430px] sm:h-[460px]"></div>
 
           <!-- Interactive Deep Factor Inspector Box -->
-          <div id="deep-driver-inspector" class="mt-4 p-5 rounded-2xl bg-gradient-to-br from-rose-500/15 via-charcoal to-obsidian border border-rose-400/35 relative overflow-hidden">
-            <div class="pointer-events-none select-none absolute -right-3 -bottom-6 font-mono font-black text-8xl text-rose-400/10" id="inspector-rank-watermark">01</div>
+          <div id="deep-driver-inspector" class="mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-500/15 via-charcoal to-obsidian border border-amber-400/35 relative overflow-hidden">
+            <div class="pointer-events-none select-none absolute -right-3 -bottom-6 font-mono font-black text-8xl text-amber-400/10" id="inspector-rank-watermark">01</div>
             <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <span class="text-[11px] font-mono uppercase tracking-widest text-rose-300" id="inspector-badge">
+              <span class="text-[11px] font-mono uppercase tracking-widest text-amber-300" id="inspector-badge">
                 DEEP DRIVER 01 · 核心本质解剖
               </span>
-              <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-200 border border-rose-400/30 font-bold" id="inspector-metric">
+              <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-400/30 font-bold" id="inspector-metric">
                 76.4% 视为首要前提 · 69.9% 毕业生求稳
               </span>
             </div>
@@ -1970,7 +1785,7 @@
             <p class="text-xs sm:text-sm text-gray-200 leading-relaxed mb-3" id="inspector-detail">
               房价与房租只是婚育成本的“分子”，而岗位稳定性与收入预期则是“分母”。2024年16–24岁青年调查失业率在13.2%–18.8%高位波动，25–29岁初婚主力段失业率（6.1%–7.2%）亦高于社会均值；全国灵活就业人员达2亿人。高达76.4%的受访青年将“工作与收入稳定”列为结婚第一前提（高于买房的61.8%），69.9%的应届生首选国企（47.7%）与机关事业编（22.2%）——当职业生涯缺乏远期确定性，推迟长周期家庭契约是最理性的防御。
             </p>
-            <div class="text-[11px] font-mono text-rose-300/80 pt-2 border-t border-white/10" id="inspector-source">
+            <div class="text-[11px] font-mono text-amber-300/80 pt-2 border-t border-white/10" id="inspector-source">
               信源：国家统计局2024分年龄组失业率公报 / 智联招聘《2024大学生就业力调研报告》 / 中国人民大学人口与发展研究中心
             </div>
           </div>
@@ -1979,26 +1794,26 @@
         <!-- Right 5 Cols: 5 Staggered Deep Structural Factor Cards -->
         <div class="lg:col-span-5 space-y-4">
           <!-- Factor 01: Job & Income Stability -->
-          <div data-driver-idx="0" data-target-view="prerequisite" class="driver-card active cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:-ml-3 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-400/15 transition-colors">01</span>
+          <div data-driver-idx="0" data-target-view="prerequisite" class="driver-card active cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-amber-400 lg:-ml-3 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-amber-400/15 transition-colors">01</span>
             <div class="flex items-center justify-between gap-2 mb-1.5">
               <span class="font-serif font-bold text-base text-white">第一因：就业与岗位稳定性</span>
-              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold shrink-0">76.4% 首要前提</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold shrink-0">76.4% 首要前提</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              2024年16–24岁青年调查失业率峰值达 <strong class="text-rose-300 font-mono">18.8%</strong>，全国灵活就业达 <strong class="text-white font-mono">2亿人</strong>；<strong class="text-rose-300 font-mono">69.9%</strong> 应届毕业生倾向进入国企/体制内求稳，“先稳岗立业、再谈婚论嫁”成为青年共识。
+              2024年16–24岁青年调查失业率峰值达 <strong class="text-amber-300 font-mono">18.8%</strong>，全国灵活就业达 <strong class="text-white font-mono">2亿人</strong>；<strong class="text-amber-300 font-mono">69.9%</strong> 应届毕业生倾向进入国企/体制内求稳，“先稳岗立业、再谈婚论嫁”成为青年共识。
             </p>
           </div>
 
           <!-- Factor 02: Higher Education Expansion -->
-          <div data-driver-idx="1" data-target-view="education" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:translate-x-2 -rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-400/15 transition-colors">02</span>
+          <div data-driver-idx="1" data-target-view="education" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-cyan-400 lg:translate-x-2 -rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-cyan-400/15 transition-colors">02</span>
             <div class="flex items-center justify-between gap-2 mb-1.5">
               <span class="font-serif font-bold text-base text-white">第二因：高等教育年限延长</span>
-              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold shrink-0">毛入学率 26.5%→60.2%</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold shrink-0">毛入学率 26.5%→60.2%</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              2024年高校毕业生达 <strong class="text-rose-300 font-mono">1179万人</strong>。七普实测：研究生平均初婚年龄（<strong class="text-white font-mono">26.97岁</strong>）比初中及以下（22.92岁）晚 <strong class="text-rose-300 font-mono">4.05年</strong>，学历跃升拉长了社会化准备期。
+              2024年高校毕业生达 <strong class="text-cyan-300 font-mono">1179万人</strong>。七普实测：研究生平均初婚年龄（<strong class="text-white font-mono">26.97岁</strong>）比初中及以下（22.92岁）晚 <strong class="text-cyan-300 font-mono">4.05年</strong>，学历跃升拉长了社会化准备期。
             </p>
           </div>
 
@@ -2015,23 +1830,23 @@
           </div>
 
           <!-- Factor 04: 0-3 Childcare Deficit -->
-          <div data-driver-idx="3" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:translate-x-2 -rotate-[0.5deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-400/15 transition-colors">04</span>
+          <div data-driver-idx="3" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-violet-400 lg:translate-x-2 -rotate-[0.5deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-sky-400/15 transition-colors">04</span>
             <div class="flex items-center justify-between gap-2 mb-1.5">
               <span class="font-serif font-bold text-base text-white">第四因：0–3岁普惠托育与照料断层</span>
-              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-white/10 text-white font-mono font-bold shrink-0">实际入托率仅 7.86%</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold shrink-0">实际入托率仅 7.86%</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
-              国务院2024托育工作报告披露：我国3岁以下婴幼儿入托率仅 <strong class="text-white font-mono font-mono">7.86%</strong>（远低于OECD均值36%），<strong class="text-white font-mono">56.3%</strong> 家庭面临普惠托位紧缺，加剧双职工育儿后顾之忧。
+              国务院2024托育工作报告披露：我国3岁以下婴幼儿入托率仅 <strong class="text-sky-300 font-mono">7.86%</strong>（远低于OECD均值36%），<strong class="text-white font-mono">56.3%</strong> 家庭面临普惠托位紧缺，加剧双职工育儿后顾之忧。
             </p>
           </div>
 
           <!-- Factor 05: Bride Price & Wedding Sunk Cost -->
-          <div data-driver-idx="4" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-400 lg:-ml-2 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
-            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-400/15 transition-colors">05</span>
+          <div data-driver-idx="4" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-emerald-400 lg:-ml-2 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-emerald-400/15 transition-colors">05</span>
             <div class="flex items-center justify-between gap-2 mb-1.5">
               <span class="font-serif font-bold text-base text-white">第五因：婚嫁礼俗与一次性启动门槛</span>
-              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-white/10 text-white font-mono font-bold shrink-0">彩礼约合 3–6年 收入</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold shrink-0">彩礼约合 3–6年 收入</span>
             </div>
             <p class="text-xs text-gray-300 leading-relaxed">
               在县域及部分省份，10万—28万元彩礼与婚宴刚性支出叠加上车的首付要求，构成高昂的“一次性现金流门槛”，迫使低储蓄青年拉长婚前积累期。
@@ -2065,7 +1880,7 @@
           </h2>
         </div>
         <div class="lg:col-span-4 reveal-up">
-          <p class="font-hand text-2xl text-rose-300 leading-snug">
+          <p class="font-hand text-2xl text-amber-300 leading-snug">
             “读懂一条初婚年龄曲线，就是读懂当代中国青年在时间轴与地理版图上的生存突围。”
           </p>
         </div>
@@ -2087,20 +1902,20 @@
           </div>
 
           <div class="space-y-5">
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">01 · 从“生存本能”转向“确定性契约”</span>
-                <span class="font-mono text-[11px] text-rose-400 font-bold">76.4% 首要锚点</span>
+                <span class="font-serif font-bold text-base text-amber-300">01 · 从“生存本能”转向“确定性契约”</span>
+                <span class="font-mono text-[11px] text-amber-400 font-bold">76.4% 首要锚点</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>工作与收入预期稳定成为第一前置条件</strong>：面对16–24岁青年失业率波动（13.2%–18.8%）与2亿灵活就业浪潮，近七成（69.9%）毕业生倾向体制内求稳；没有稳定的岗位现金流，年轻人拒绝盲目进入高负债的婚姻契约。
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">02 · 从“24岁早婚普婚”迈入“30岁晚婚新纪元”</span>
-                <span class="font-mono text-[11px] text-rose-400 font-bold">24.89岁 → 28.67岁</span>
+                <span class="font-serif font-bold text-base text-cyan-300">02 · 从“24岁早婚普婚”迈入“30岁晚婚新纪元”</span>
+                <span class="font-mono text-[11px] text-cyan-400 font-bold">24.89岁 → 28.67岁</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>高学历延长与生命周期整体后移</strong>：高等教育毛入学率十年从26.5%跃升至60.2%，“本硕深造（研究生初婚26.97岁）+ 3至5年职场立足期”使全国初婚年龄十年陡增3.78岁，30岁以上登记人群逼近半数。
@@ -2117,10 +1932,10 @@
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-white font-mono">04 · 从“家庭内部消化”转向“性别与时间博弈”</span>
-                <span class="font-mono text-[11px] text-rose-400 font-bold">女+3.95岁 · 4.48x惩罚</span>
+                <span class="font-serif font-bold text-base text-sky-300">04 · 从“家庭内部消化”转向“性别与时间博弈”</span>
+                <span class="font-mono text-[11px] text-sky-400 font-bold">女+3.95岁 · 4.48x惩罚</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>高学历女性以晚婚规避母职惩罚</strong>：在49.0小时周工时与0–3岁入托率仅7.86%的夹击下，女性因婚育被动失晋升比例达男性4.48倍（13.0% vs 2.9%），女性十年初婚推迟斜率显著快于男性。
@@ -2130,13 +1945,13 @@
         </div>
 
         <!-- Right 6 Cols: 四大地域特征 (Regional Characteristics) -->
-        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-rose-400 relative overflow-hidden reveal-up">
+        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-sky-400 relative overflow-hidden reveal-up">
           <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
             <div>
-              <span class="text-[11px] font-mono uppercase tracking-widest text-rose-400 block">DIMENSION II · SPATIAL FOLDING</span>
+              <span class="text-[11px] font-mono uppercase tracking-widest text-sky-400 block">DIMENSION II · SPATIAL FOLDING</span>
               <h3 class="font-serif text-2xl sm:text-3xl font-black text-white mt-0.5">当下中国婚育的“四大地域特征”</h3>
             </div>
-            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-6 font-serif font-black text-xs shrink-0 border-rose-400 text-rose-300">
+            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-6 font-serif font-black text-xs shrink-0 border-sky-400 text-sky-300">
               山海图谱<br/><span class="text-[9px] font-mono">31 PROVINCES</span>
             </div>
           </div>
@@ -2145,37 +1960,37 @@
             <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
                 <span class="font-serif font-bold text-base text-rose-300">01 · 东北与京沪：“一北一东”双峰晚婚极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">黑 31.48岁 / 沪 30.10岁</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">黑 31.48岁 / 沪 30.10岁</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>先发城镇化老龄化与超大城市高成本殊途同归</strong>：全国最晚婚并非仅在北上广——黑龙江（31.48岁）与辽宁（29.79岁）因高城镇化率、体制内高就业比重与青年外流居首；上海（30.10岁）则代表都市极限生活成本下的晚婚极值。
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">02 · 珠三角与长三角：青年虹吸与高成本分化极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">粤 102.38万人全国第1</span>
+                <span class="font-serif font-bold text-base text-sky-300">02 · 珠三角与长三角：青年虹吸与高成本分化极</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">粤 102.38万人全国第1</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>人口流入撑起登记盘，但安居门槛拉长婚前准备</strong>：广东凭省外年轻劳动力涌入蝉联结婚登记榜首（51.19万对）；长三角（沪苏浙皖）则在“跨省通办”下呈现登记总量庞大、但初婚年龄全面向28—30岁逼近的态势。
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-rose-300">03 · 中原与华北县域：人口基本盘与礼俗挤压极</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">豫 47.13万对 / 鲁 35.30万对</span>
+                <span class="font-serif font-bold text-base text-amber-300">03 · 中原与华北县域：人口基本盘与礼俗挤压极</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">豫 47.13万对 / 鲁 35.30万对</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>大体量登记背后的县域婚嫁现金流博弈</strong>：河南、山东、河北等人口大省构成全国结婚登记的中流砥柱，但县城婚房刚需与传统彩礼溢价叠加，正推动中部省份初婚年龄加速向28.5—29岁收敛（如河南已超29岁）。
               </p>
             </div>
 
-            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20/50 transition-all">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/50 transition-all">
               <div class="flex items-center justify-between mb-1.5">
-                <span class="font-serif font-bold text-base text-white font-mono">04 · 西南高原与稳房价省会：早婚高率缓冲绿洲</span>
-                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-white/10 text-white font-mono font-bold">藏14.92‰ · 黔13.71‰ · 长沙6.5x</span>
+                <span class="font-serif font-bold text-base text-emerald-300">04 · 西南高原与稳房价省会：早婚高率缓冲绿洲</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">藏14.92‰ · 黔13.71‰ · 长沙6.5x</span>
               </div>
               <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
                 <strong>多元婚育文化与低居住成本的双重托底</strong>：西藏（结婚人口率14.92‰、初婚占比90.04%）、贵州（13.71‰、初婚27.26岁）、青海（13.12‰）稳居全国结婚率前三；长沙（房价收入比6.5x）则实证了稳房价对延缓晚婚的显著作用。
@@ -2194,7 +2009,7 @@
             <span class="px-3 py-1 rounded-full bg-rose-500 text-white font-mono text-xs font-bold tracking-widest uppercase">
               TOPIC CONCLUSION · 新闻话题总结
             </span>
-            <span class="text-xs font-mono text-rose-300">
+            <span class="text-xs font-mono text-amber-300">
               // 从“催婚焦虑”走向“制度减负与确定性重建”
             </span>
           </div>
@@ -2202,7 +2017,7 @@
         </div>
 
         <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white leading-snug mb-6">
-          初婚年龄十年陡升的本质，不是青年对亲密关系的背离，而是<span class="text-rose-300">“就业预期波动、安居养育高成本、性别照料失衡”</span>三重结构性压力在青年生命周期上的投射。
+          初婚年龄十年陡升的本质，不是青年对亲密关系的背离，而是<span class="text-amber-300">“就业预期波动、安居养育高成本、性别照料失衡”</span>三重结构性压力在青年生命周期上的投射。
         </h3>
 
         <p class="text-sm sm:text-base text-gray-200 leading-relaxed mb-8 max-w-5xl">
@@ -2210,16 +2025,16 @@
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-5 rounded-2xl bg-black/40 border border-rose-400/30">
-            <div class="font-mono text-xs text-rose-400 uppercase mb-1">PILLAR 01 · 筑牢分母</div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-amber-400/30">
+            <div class="font-mono text-xs text-amber-400 uppercase mb-1">PILLAR 01 · 筑牢分母</div>
             <div class="font-serif font-bold text-lg text-white mb-2">稳就业与改善青年收入预期</div>
             <p class="text-xs text-gray-300 leading-relaxed">
               拓宽高校毕业生高质量就业渠道，健全2亿灵活就业群体的社保与劳动权益保障，落实44小时法定工时制度，给青年敢于缔结长期家庭契约的“收入安全感”。
             </p>
           </div>
 
-          <div class="p-5 rounded-2xl bg-black/40 border border-rose-400/30">
-            <div class="font-mono text-xs text-rose-400 uppercase mb-1">PILLAR 02 · 削减分子</div>
+          <div class="p-5 rounded-2xl bg-black/40 border border-cyan-400/30">
+            <div class="font-mono text-xs text-cyan-400 uppercase mb-1">PILLAR 02 · 削减分子</div>
             <div class="font-serif font-bold text-lg text-white mb-2">青年保障性安居与育儿补贴</div>
             <p class="text-xs text-gray-300 leading-relaxed">
               借鉴“长沙稳房价”经验，扩大一二线城市新市民保障性租赁住房供给、实现租购同权，并通过阶梯式现金育儿补贴与个税抵扣，对冲百万级养育账单。
@@ -2244,7 +2059,7 @@
   <section id="section-references" class="relative py-28 px-6 border-t border-white/[0.06] overflow-hidden">
     <div class="max-w-6xl mx-auto relative z-10">
       <div class="reveal-up mb-20">
-        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-emerald-400 mb-3">
           <i data-lucide="Database" class="w-3.5 h-3.5"></i>
           <span>METHODOLOGY &amp; AUTHORITATIVE REFERENCES</span>
         </div>
@@ -2266,13 +2081,13 @@
               <tbody class="divide-y divide-white/[0.06] text-gray-400">
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">全国初婚年龄序列</td>
-                  <td class="py-3.5 px-5 font-mono text-rose-300">2010年 24.89岁 → 2020年 28.67岁<br/>(男29.38岁，女27.95岁)</td>
+                  <td class="py-3.5 px-5 font-mono text-cyan-300">2010年 24.89岁 → 2020年 28.67岁<br/>(男29.38岁，女27.95岁)</td>
                   <td class="py-3.5 px-5">国务院第七次全国人口普查领导小组办公室、国家统计局《中国人口普查年鉴-2020》</td>
                   <td class="py-3.5 px-5">长表数据第五卷《婚姻》，按10%抽样户加权测算全国历年平均初婚年龄。</td>
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">31省市结婚人口与女性婚龄版图</td>
-                  <td class="py-3.5 px-5 font-mono text-rose-300">2024全国610.56万对(1221.12万人)<br/>广东51.19万对 · 河南47.13万对 · 四川39.44万对</td>
+                  <td class="py-3.5 px-5 font-mono text-sky-300">2024全国610.56万对(1221.12万人)<br/>广东51.19万对 · 河南47.13万对 · 四川39.44万对</td>
                   <td class="py-3.5 px-5">国家统计局《中国统计年鉴2025》表《2024年各地区婚姻登记情况》；各省《人口普查年鉴-2020》及省民政厅通报</td>
                   <td class="py-3.5 px-5">31省市结婚登记对数、初婚/再婚人数100%摘自《中国统计年鉴2025》；未单独刊发省级初婚均值公报的省份严格标注七普全国女性基准(27.95岁)。</td>
                 </tr>
@@ -2284,31 +2099,31 @@
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">结婚登记总量与结构</td>
-                  <td class="py-3.5 px-5 font-mono text-rose-300">2013年 1346.9万对 → 2024年 610.6万对<br/>25–29岁占比 35.1%–39.4%</td>
+                  <td class="py-3.5 px-5 font-mono text-amber-300">2013年 1346.9万对 → 2024年 610.6万对<br/>25–29岁占比 35.1%–39.4%</td>
                   <td class="py-3.5 px-5">中华人民共和国民政部《2013—2024年民政事业发展统计公报》</td>
                   <td class="py-3.5 px-5">全国各级民政部门依法办理结婚登记对数及分年龄段登记人口比重。</td>
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">0–17岁直接养育成本</td>
-                  <td class="py-3.5 px-5 font-mono text-white font-mono">上海 1,010,130元 · 北京 936,375元<br/>浙江 854,942元 · 全国均值 538,312元</td>
+                  <td class="py-3.5 px-5 font-mono text-sky-300">上海 1,010,130元 · 北京 936,375元<br/>浙江 854,942元 · 全国均值 538,312元</td>
                   <td class="py-3.5 px-5">育娲人口研究智库《中国生育成本报告2024版》（梁建章、黄文政、何亚福等著）</td>
                   <td class="py-3.5 px-5">基于国家统计局《中国统计年鉴2023》分省居民人均消费支出及住户调查数据核算。</td>
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">房价收入比 &amp; 租金占比</td>
-                  <td class="py-3.5 px-5 font-mono text-white font-mono">房价收入比：深圳34.8x / 长沙6.5x<br/>租金收入比：深圳26.95% / 上海25.28%</td>
+                  <td class="py-3.5 px-5 font-mono text-emerald-300">房价收入比：深圳34.8x / 长沙6.5x<br/>租金收入比：深圳26.95% / 上海25.28%</td>
                   <td class="py-3.5 px-5">诸葛数据研究中心《2024上半年重点50城租金收入比报告》、麟评居住大数据/易居研究院</td>
                   <td class="py-3.5 px-5">百城房价收入比均值2024年为10.3倍；重点50城平均租金占人均可支配收入比为12.75%。</td>
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">职场工时与女性婚育调研</td>
-                  <td class="py-3.5 px-5 font-mono text-rose-300">2023–2024周均工时 49.0小时<br/>婚育致被动失晋升：女13.0% vs 男2.9%</td>
+                  <td class="py-3.5 px-5 font-mono text-cyan-300">2023–2024周均工时 49.0小时<br/>婚育致被动失晋升：女13.0% vs 男2.9%</td>
                   <td class="py-3.5 px-5">国家统计局月度/年度劳动力调查数据；智联招聘《2024中国女性职场现状调查报告》</td>
                   <td class="py-3.5 px-5">企业就业人员调查周实际平均工时；智联招聘覆盖全国职场白领性别对比抽样调查。</td>
                 </tr>
                 <tr>
                   <td class="py-3.5 px-5 font-medium text-white">青年就业稳定性与失业率</td>
-                  <td class="py-3.5 px-5 font-mono text-rose-300">2024年16–24岁失业率 13.2%–18.8%<br/>岗位稳定居首 76.4% · 求稳倾向 69.9%</td>
+                  <td class="py-3.5 px-5 font-mono text-amber-300">2024年16–24岁失业率 13.2%–18.8%<br/>岗位稳定居首 76.4% · 求稳倾向 69.9%</td>
                   <td class="py-3.5 px-5">国家统计局2024年分年龄组城镇调查失业率月度公报；智联招聘《2024大学生就业力调研报告》；中国人民大学人口与发展研究中心</td>
                   <td class="py-3.5 px-5">16–24岁及25–29岁调查失业率均为国家统计局不含在校生实测口径；应届生求稳比例为国企(47.7%)+政府事业(22.2%)合计。</td>
                 </tr>
@@ -2332,7 +2147,7 @@
         </p>
 
         <blockquote class="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.38] mb-8">
-          当结婚从人生的<span class="text-rose-400 underline decoration-wavy decoration-rose-400/50 underline-offset-8">起点</span>，变成需要漫长原始积累才能兑换的<span class="text-rose-400 px-2 bg-rose-500/15 rounded">奢侈品</span>，每一个向上攀升的初婚年龄小数点，都是年轻一代在城市成本账本前做出的审慎权衡。
+          当结婚从人生的<span class="text-cyan-400 underline decoration-wavy decoration-cyan-400/50 underline-offset-8">起点</span>，变成需要漫长原始积累才能兑换的<span class="text-rose-400 px-2 bg-rose-500/15 rounded">奢侈品</span>，每一个向上攀升的初婚年龄小数点，都是年轻一代在城市成本账本前做出的审慎权衡。
         </blockquote>
 
         <p class="text-sm sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-10 font-light">
@@ -2500,14 +2315,14 @@
       milestones.forEach((m, idx) => {
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'life-stage-cmd text-left p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-rose-400/60 transition-all';
+        btn.className = 'life-stage-cmd text-left p-3.5 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-amber-400/60 transition-all';
         btn.innerHTML = `
           <div class="flex items-center justify-between mb-1">
-            <span class="w-2.5 h-2.5 rounded-full ${idx >= 3 ? 'bg-rose-500' : 'bg-rose-400'}"></span>
+            <span class="w-2.5 h-2.5 rounded-full ${idx >= 3 ? 'bg-rose-500' : 'bg-cyan-400'}"></span>
             <span class="font-mono text-[10px] text-gray-400">STEP 0${idx + 1}</span>
           </div>
           <div class="font-mono text-lg font-extrabold text-white">${m.age}</div>
-          <div class="text-[11px] text-rose-300/90 mt-0.5 line-clamp-1">${m.tag}</div>
+          <div class="text-[11px] text-amber-300/90 mt-0.5 line-clamp-1">${m.tag}</div>
         `;
         btn.addEventListener('click', () => selectMilestone(idx));
         container.appendChild(btn);
@@ -2590,8 +2405,8 @@
             smooth: 0.35,
             symbol: 'circle',
             symbolSize: 8,
-            lineStyle: { width: 3.5, color: '#ff4d79', shadowColor: '#06b6d4', shadowBlur: 14 },
-            itemStyle: { color: '#ff4d79', borderColor: '#07080c', borderWidth: 2 },
+            lineStyle: { width: 3.5, color: '#06b6d4', shadowColor: '#06b6d4', shadowBlur: 14 },
+            itemStyle: { color: '#06b6d4', borderColor: '#07080c', borderWidth: 2 },
             areaStyle: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 { offset: 0, color: 'rgba(6, 182, 212, 0.35)' },
@@ -2624,8 +2439,8 @@
             smooth: 0.3,
             symbol: 'emptyCircle',
             symbolSize: 7,
-            lineStyle: { width: 2, type: 'dashed', color: '#ff4d79' },
-            itemStyle: { color: '#ff4d79' }
+            lineStyle: { width: 2, type: 'dashed', color: '#38bdf8' },
+            itemStyle: { color: '#38bdf8' }
           },
           {
             name: '全国女性初婚 (七普年鉴)',
@@ -2681,8 +2496,8 @@
             connectNulls: true,
             symbol: 'rect',
             symbolSize: 8,
-            lineStyle: { width: 2.5, color: '#f8fafc' },
-            itemStyle: { color: '#f8fafc' }
+            lineStyle: { width: 2.5, color: '#10b981' },
+            itemStyle: { color: '#10b981' }
           },
           {
             name: '杭州男性初婚 (杭州市民政局)',
@@ -2691,8 +2506,8 @@
             connectNulls: true,
             symbol: 'triangle',
             symbolSize: 9,
-            lineStyle: { width: 2.5, color: '#ff4d79' },
-            itemStyle: { color: '#ff4d79' }
+            lineStyle: { width: 2.5, color: '#f59e0b' },
+            itemStyle: { color: '#f59e0b' }
           }
         ]
       };
@@ -2749,7 +2564,7 @@
             itemStyle: {
               borderRadius: [6, 6, 0, 0],
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: '#ff4d79' },
+                { offset: 0, color: '#06b6d4' },
                 { offset: 1, color: 'rgba(6, 182, 212, 0.12)' }
               ])
             },
@@ -3012,7 +2827,7 @@
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.setAttribute('data-prov', p.name);
-        btn.className = `prov-pill px-2.5 py-1 rounded-lg text-xs font-mono border border-white/10 bg-white/[0.04] text-gray-300 hover:border-rose-400/50 hover:text-white ${
+        btn.className = `prov-pill px-2.5 py-1 rounded-lg text-xs font-mono border border-white/10 bg-white/[0.04] text-gray-300 hover:border-sky-400/50 hover:text-white ${
           p.name === currentSelectedProvince ? 'active' : ''
         }`;
         btn.textContent = `${p.rank}.${p.name}`;
@@ -3335,7 +3150,7 @@
             itemStyle: {
               borderRadius: [6, 6, 0, 0],
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: '#ff4d79' },
+                { offset: 0, color: '#06b6d4' },
                 { offset: 1, color: 'rgba(6, 182, 212, 0.18)' }
               ])
             },
@@ -3406,7 +3221,7 @@
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: '#f8fafc' },
+                { offset: 0, color: '#8b5cf6' },
                 { offset: 1, color: 'rgba(139, 92, 246, 0.15)' }
               ])
             },
@@ -3421,10 +3236,10 @@
             markLine: {
               symbol: ['none', 'none'],
               silent: true,
-              lineStyle: { color: '#ff4d79', type: 'dashed', width: 1.5 },
+              lineStyle: { color: '#f59e0b', type: 'dashed', width: 1.5 },
               label: {
                 formatter: '《劳动法》44h/周工时上限',
-                color: '#ff4d79',
+                color: '#fbbf24',
                 fontSize: 11,
                 fontFamily: 'JetBrains Mono'
               },
@@ -3439,8 +3254,8 @@
             symbol: 'circle',
             symbolSize: 9,
             data: g.marriageCouplesWan,
-            lineStyle: { width: 3, color: '#ff4d79', shadowColor: '#06b6d4', shadowBlur: 12 },
-            itemStyle: { color: '#ff4d79', borderColor: '#fff', borderWidth: 2 },
+            lineStyle: { width: 3, color: '#06b6d4', shadowColor: '#06b6d4', shadowBlur: 12 },
+            itemStyle: { color: '#06b6d4', borderColor: '#fff', borderWidth: 2 },
             label: {
               show: true,
               position: 'bottom',
@@ -3586,7 +3401,7 @@
           name: '城镇调查失业率 (不含在校生 · %)',
           min: 3,
           max: 21,
-          nameTextStyle: { color: '#ff4d79', fontSize: 11 },
+          nameTextStyle: { color: '#fbbf24', fontSize: 11 },
           axisLabel: { color: '#9ca3af', fontFamily: 'JetBrains Mono', fontSize: 11, formatter: '{value}%' },
           splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)', type: 'dashed' } }
         },
@@ -3598,8 +3413,8 @@
             symbol: 'circle',
             symbolSize: 8,
             data: d.youthUnemployment16to24,
-            lineStyle: { width: 3.5, color: '#ff4d79', shadowColor: '#f59e0b', shadowBlur: 14 },
-            itemStyle: { color: '#ff4d79', borderColor: '#fff', borderWidth: 1.5 },
+            lineStyle: { width: 3.5, color: '#f59e0b', shadowColor: '#f59e0b', shadowBlur: 14 },
+            itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 1.5 },
             areaStyle: {
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 { offset: 0, color: 'rgba(245, 158, 11, 0.32)' },
@@ -3619,8 +3434,8 @@
             symbol: 'diamond',
             symbolSize: 8,
             data: d.primeMarriageUnemployment25to29,
-            lineStyle: { width: 3, color: '#ff4d79' },
-            itemStyle: { color: '#ff4d79', borderColor: '#07080c', borderWidth: 1.5 }
+            lineStyle: { width: 3, color: '#06b6d4' },
+            itemStyle: { color: '#06b6d4', borderColor: '#07080c', borderWidth: 1.5 }
           },
           {
             name: '全国城镇总体调查失业率 (%)',
@@ -3676,11 +3491,11 @@
             itemStyle: {
               borderRadius: [6, 6, 0, 0],
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                { offset: 0, color: '#ff4d79' },
+                { offset: 0, color: '#38bdf8' },
                 { offset: 1, color: 'rgba(56, 189, 248, 0.2)' }
               ])
             },
-            label: { show: true, position: 'top', formatter: '{c}', color: '#ff4d79', fontFamily: 'JetBrains Mono', fontSize: 10 }
+            label: { show: true, position: 'top', formatter: '{c}', color: '#38bdf8', fontFamily: 'JetBrains Mono', fontSize: 10 }
           },
           {
             name: '女性平均初婚年龄 (岁)',
@@ -3703,8 +3518,8 @@
             symbol: 'circle',
             symbolSize: 9,
             data: d.eduTotalAge,
-            lineStyle: { width: 3, color: '#ff4d79', shadowColor: '#fbbf24', shadowBlur: 12 },
-            itemStyle: { color: '#ff4d79', borderColor: '#fff', borderWidth: 2 }
+            lineStyle: { width: 3, color: '#fbbf24', shadowColor: '#fbbf24', shadowBlur: 12 },
+            itemStyle: { color: '#fbbf24', borderColor: '#fff', borderWidth: 2 }
           }
         ]
       };
@@ -3801,74 +3616,5 @@
       });
     });
   </script>
-<script>
-    // =========================================================================
-    // V3.0 INTERACTIVE GRADIENT & SPOTLIGHT ENGINE
-    // =========================================================================
-    (function initGradientInteractions() {
-      // 1. Dynamic Cursor Spotlight Gradient for all interactive cards
-      document.addEventListener('mousemove', function(e) {
-        const cards = document.querySelectorAll('.interactive-gradient-card, .driver-card, .editorial-note');
-        cards.forEach(card => {
-          const rect = card.getBoundingClientRect();
-          if (e.clientX >= rect.left - 60 && e.clientX <= rect.right + 60 &&
-              e.clientY >= rect.top - 60 && e.clientY <= rect.bottom + 60) {
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', x + 'px');
-            card.style.setProperty('--mouse-y', y + 'px');
-          }
-        });
-      });
-
-      // 2. Dynamic Click Ripple Wave in Radiant Rose Gradient
-      document.addEventListener('click', function(e) {
-        const target = e.target.closest('.interactive-btn, button, .driver-card, .age-tick, a, .province-item');
-        if (!target) return;
-        const rect = target.getBoundingClientRect();
-        const circle = document.createElement('span');
-        const diameter = Math.max(rect.width, rect.height) * 2;
-        circle.style.width = circle.style.height = diameter + 'px';
-        circle.style.left = (e.clientX - rect.left - diameter / 2) + 'px';
-        circle.style.top = (e.clientY - rect.top - diameter / 2) + 'px';
-        circle.className = 'ripple-gradient-effect';
-        const origPos = window.getComputedStyle(target).position;
-        if (origPos === 'static') target.style.position = 'relative';
-        target.style.overflow = 'hidden';
-        target.appendChild(circle);
-        setTimeout(() => circle.remove(), 750);
-      });
-
-      // 3. Hero Visual Switcher: Fashion Cover <-> Thermal Receipt
-      const btnFashion = document.getElementById('hero-toggle-fashion');
-      const btnReceipt = document.getElementById('hero-toggle-receipt');
-      const cardFashion = document.getElementById('hero-card-fashion');
-      const cardReceipt = document.getElementById('hero-card-receipt');
-
-      if (btnFashion && btnReceipt && cardFashion && cardReceipt) {
-        btnFashion.addEventListener('click', function() {
-          btnFashion.className = 'interactive-btn text-xs font-serif px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-bold transition-all shadow-lg flex items-center gap-1.5';
-          btnReceipt.className = 'interactive-btn text-xs font-serif px-4 py-1.5 rounded-full text-gray-300 hover:text-white transition-all flex items-center gap-1.5';
-          cardFashion.style.opacity = '1';
-          cardFashion.style.pointerEvents = 'auto';
-          cardFashion.style.zIndex = '10';
-          cardReceipt.style.opacity = '0';
-          cardReceipt.style.pointerEvents = 'none';
-          cardReceipt.style.zIndex = '0';
-        });
-
-        btnReceipt.addEventListener('click', function() {
-          btnReceipt.className = 'interactive-btn text-xs font-serif px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-600 to-rose-500 text-white font-bold transition-all shadow-lg flex items-center gap-1.5';
-          btnFashion.className = 'interactive-btn text-xs font-serif px-4 py-1.5 rounded-full text-gray-300 hover:text-white transition-all flex items-center gap-1.5';
-          cardReceipt.style.opacity = '1';
-          cardReceipt.style.pointerEvents = 'auto';
-          cardReceipt.style.zIndex = '10';
-          cardFashion.style.opacity = '0';
-          cardFashion.style.pointerEvents = 'none';
-          cardFashion.style.zIndex = '0';
-        });
-      }
-    })();
-</script>
 </body>
 </html>
