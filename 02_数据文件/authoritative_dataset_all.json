@@ -1045,5 +1045,128 @@
       "female_to_male_ratio": 1.47,
       "source": "智联招聘《2024中国女性职场现状调查报告》"
     }
+  ],
+  "youth_unemployment_2024": [
+    {
+      "month": "2024-01",
+      "youth_16_24_pct": 14.6,
+      "prime_marriage_25_29_pct": 6.2,
+      "overall_urban_pct": 5.2,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-02",
+      "youth_16_24_pct": 15.3,
+      "prime_marriage_25_29_pct": 6.4,
+      "overall_urban_pct": 5.3,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-03",
+      "youth_16_24_pct": 15.3,
+      "prime_marriage_25_29_pct": 7.2,
+      "overall_urban_pct": 5.2,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-04",
+      "youth_16_24_pct": 14.7,
+      "prime_marriage_25_29_pct": 7.1,
+      "overall_urban_pct": 5.0,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-05",
+      "youth_16_24_pct": 14.2,
+      "prime_marriage_25_29_pct": 6.6,
+      "overall_urban_pct": 5.0,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-06",
+      "youth_16_24_pct": 13.2,
+      "prime_marriage_25_29_pct": 6.4,
+      "overall_urban_pct": 5.0,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-07",
+      "youth_16_24_pct": 17.1,
+      "prime_marriage_25_29_pct": 6.5,
+      "overall_urban_pct": 5.2,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-08",
+      "youth_16_24_pct": 18.8,
+      "prime_marriage_25_29_pct": 6.9,
+      "overall_urban_pct": 5.3,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-09",
+      "youth_16_24_pct": 17.6,
+      "prime_marriage_25_29_pct": 6.7,
+      "overall_urban_pct": 5.1,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-10",
+      "youth_16_24_pct": 17.1,
+      "prime_marriage_25_29_pct": 6.8,
+      "overall_urban_pct": 5.0,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-11",
+      "youth_16_24_pct": 16.1,
+      "prime_marriage_25_29_pct": 6.7,
+      "overall_urban_pct": 5.0,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    },
+    {
+      "month": "2024-12",
+      "youth_16_24_pct": 15.7,
+      "prime_marriage_25_29_pct": 6.6,
+      "overall_urban_pct": 5.1,
+      "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"
+    }
+  ],
+  "deep_structural_drivers": [
+    {
+      "dimension": "1. 就业与岗位稳定性：拥有稳定工作与可持续收入预期",
+      "pct_or_value": "76.4%",
+      "source": "中国人民大学人口与发展研究中心青年婚育意愿实证调查（居首）"
+    },
+    {
+      "dimension": "2. 毕业生求稳倾向：2024应届生首选国企/政府事业编合计",
+      "pct_or_value": "69.9%",
+      "source": "智联招聘《2024大学生就业力调研报告》（国企47.7% + 政府/事业22.2%）"
+    },
+    {
+      "dimension": "3. 居住安全边界：具备独立住房或稳定长租保障",
+      "pct_or_value": "61.8%",
+      "source": "中国人民大学人口与发展研究中心 & 贝壳新青年居住调查"
+    },
+    {
+      "dimension": "4. 育儿现金流底盘：具备抚养子女基础储蓄与家庭支持",
+      "pct_or_value": "58.2%",
+      "source": "育娲人口研究《中国生育成本报告2024版》及青年生育意愿调查"
+    },
+    {
+      "dimension": "5. 普惠托育缺口：3岁以下家庭面临托位紧缺比例（实际入托率7.86%）",
+      "pct_or_value": "56.3%",
+      "source": "国务院《关于推进托育服务工作情况的报告》(2024)"
+    },
+    {
+      "dimension": "6. 高等教育扩张：高等教育毛入学率（2010年26.5% → 2024年60.2%）",
+      "pct_or_value": "60.2%",
+      "source": "教育部《全国教育事业发展统计公报》；《中国人口普查年鉴-2020》研究生初婚26.97岁"
+    },
+    {
+      "dimension": "7. 人口大流动与都市原子化：全国流动人口规模（十年增长69.73%）",
+      "pct_or_value": "3.76亿人",
+      "source": "国家统计局《第七次全国人口普查公报（第七号）》"
+    }
   ]
 }

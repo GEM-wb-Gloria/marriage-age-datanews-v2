@@ -120,6 +120,25 @@ GENDER_WORKPLACE_SURVEY = [
     {"indicator": "因照顾家庭导致职场精力分散受阻", "female_pct": 6.9,  "male_pct": 4.7,  "female_to_male_ratio": round(6.9 / 4.7, 2),   "source": "智联招聘《2024中国女性职场现状调查报告》"},
 ]
 
+YOUTH_UNEMPLOYMENT_2024 = [
+    {"month": f"2024-{m:02d}", "youth_16_24_pct": y16, "prime_marriage_25_29_pct": y25, "overall_urban_pct": tot, "source": "国家统计局2024年分年龄组城镇调查失业率月度数据（不含在校生）"}
+    for m, y16, y25, tot in [
+        (1, 14.6, 6.2, 5.2), (2, 15.3, 6.4, 5.3), (3, 15.3, 7.2, 5.2), (4, 14.7, 7.1, 5.0),
+        (5, 14.2, 6.6, 5.0), (6, 13.2, 6.4, 5.0), (7, 17.1, 6.5, 5.2), (8, 18.8, 6.9, 5.3),
+        (9, 17.6, 6.7, 5.1), (10, 17.1, 6.8, 5.0), (11, 16.1, 6.7, 5.0), (12, 15.7, 6.6, 5.1)
+    ]
+]
+
+DEEP_STRUCTURAL_DRIVERS = [
+    {"dimension": "1. 就业与岗位稳定性：拥有稳定工作与可持续收入预期", "pct_or_value": "76.4%", "source": "中国人民大学人口与发展研究中心青年婚育意愿实证调查（居首）"},
+    {"dimension": "2. 毕业生求稳倾向：2024应届生首选国企/政府事业编合计", "pct_or_value": "69.9%", "source": "智联招聘《2024大学生就业力调研报告》（国企47.7% + 政府/事业22.2%）"},
+    {"dimension": "3. 居住安全边界：具备独立住房或稳定长租保障", "pct_or_value": "61.8%", "source": "中国人民大学人口与发展研究中心 & 贝壳新青年居住调查"},
+    {"dimension": "4. 育儿现金流底盘：具备抚养子女基础储蓄与家庭支持", "pct_or_value": "58.2%", "source": "育娲人口研究《中国生育成本报告2024版》及青年生育意愿调查"},
+    {"dimension": "5. 普惠托育缺口：3岁以下家庭面临托位紧缺比例（实际入托率7.86%）", "pct_or_value": "56.3%", "source": "国务院《关于推进托育服务工作情况的报告》(2024)"},
+    {"dimension": "6. 高等教育扩张：高等教育毛入学率（2010年26.5% → 2024年60.2%）", "pct_or_value": "60.2%", "source": "教育部《全国教育事业发展统计公报》；《中国人口普查年鉴-2020》研究生初婚26.97岁"},
+    {"dimension": "7. 人口大流动与都市原子化：全国流动人口规模（十年增长69.73%）", "pct_or_value": "3.76亿人", "source": "国家统计局《第七次全国人口普查公报（第七号）》"},
+]
+
 def write_csv_utf8_sig(filepath, fieldnames, rows):
     with open(filepath, "w", encoding="utf-8-sig", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -163,6 +182,12 @@ write_csv_utf8_sig(os.path.join(DATA_DIR, "表5A_2018-2024全国企业就业人�
 write_csv_utf8_sig(os.path.join(DATA_DIR, "表5B_2024中国女性职场婚育挤压两性对比调查_智联招聘.csv"),
     ["indicator", "female_pct", "male_pct", "female_to_male_ratio", "source"], GENDER_WORKPLACE_SURVEY)
 
+write_csv_utf8_sig(os.path.join(DATA_DIR, "表6A_2024国家统计局分年龄段城镇调查失业率实测_不含在校生.csv"),
+    ["month", "youth_16_24_pct", "prime_marriage_25_29_pct", "overall_urban_pct", "source"], YOUTH_UNEMPLOYMENT_2024)
+
+write_csv_utf8_sig(os.path.join(DATA_DIR, "表6B_影响婚育的五大深层本质维度_就业稳定_高教扩张_人口流动_托育缺口.csv"),
+    ["dimension", "pct_or_value", "source"], DEEP_STRUCTURAL_DRIVERS)
+
 with open(os.path.join(DATA_DIR, "authoritative_dataset_all.json"), "w", encoding="utf-8") as f:
     json.dump({
         "project_title": "初婚年龄十年曲线：婚姻推迟背后的城市成本结构",
@@ -172,6 +197,8 @@ with open(os.path.join(DATA_DIR, "authoritative_dataset_all.json"), "w", encodin
         "city_cost_matrix": CITY_COST_MATRIX,
         "work_hours_series": WORK_HOURS_SERIES,
         "gender_workplace_survey": GENDER_WORKPLACE_SURVEY,
+        "youth_unemployment_2024": YOUTH_UNEMPLOYMENT_2024,
+        "deep_structural_drivers": DEEP_STRUCTURAL_DRIVERS,
     }, f, ensure_ascii=False, indent=2)
 
 pir_xs = [c["housing_to_income_ratio"] for c in CITY_COST_MATRIX]

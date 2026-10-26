@@ -230,6 +230,17 @@
       color: #c4b5fd;
       box-shadow: 0 0 24px rgba(139, 92, 246, 0.28);
     }
+    .deep-tab-btn.active {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: #f59e0b;
+      color: #fcd34d;
+      box-shadow: 0 0 24px rgba(245, 158, 11, 0.28);
+    }
+    .driver-card.active {
+      border-color: rgba(251, 191, 36, 0.65);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(15, 20, 32, 0.85) 100%);
+      box-shadow: 0 18px 45px rgba(245, 158, 11, 0.18);
+    }
 
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #07080c; }
@@ -394,6 +405,81 @@
         ],
         femalePercentages: [49.6, 48.8, 33.1, 32.2, 13.0, 6.9],
         malePercentages:   [44.8, 11.5, 9.2,  17.4, 2.9,  4.7]
+      },
+
+      // 4.5 深层本质维度：就业与岗位稳定性、高等教育延长、青年失业率周期、流动人口与托育缺口
+      deepStructuralDrivers: {
+        // 维度A：青年婚育前置条件权重 & 就业求稳倾向（中国人民大学人口与发展研究中心 / 智联招聘2024就业力报告 / 国家卫健委）
+        prerequisiteFactors: [
+          '1. 就业与岗位稳定性：\n拥有稳定工作与可持续收入预期',
+          '2. 毕业生求稳倾向：\n2024应届生首选国企/政府事业编合计',
+          '3. 居住安全边界：\n具备独立住房或稳定长租保障',
+          '4. 育儿现金流底盘：\n具备抚养子女基础储蓄与家庭支持',
+          '5. 普惠托育缺口：\n3岁以下家庭面临托位紧缺比例',
+          '6. 青年就业摩擦峰值：\n2024年8月16–24岁调查失业率'
+        ],
+        prerequisiteValues: [76.4, 69.9, 61.8, 58.2, 56.3, 18.8],
+        prerequisiteSources: [
+          '中国人民大学人口与发展研究中心青年婚育意愿实证调查（居首）',
+          '智联招聘《2024大学生就业力调研报告》（国企47.7% + 政府/事业22.2%）',
+          '中国人民大学人口与发展研究中心 & 贝壳新青年居住调查',
+          '育娲人口研究《中国生育成本报告2024版》及青年生育意愿调查',
+          '国务院《关于推进托育服务工作情况的报告》(2024)：实际入托率仅7.86%',
+          '国家统计局2024年8月分年龄组城镇调查失业率（不含在校生）'
+        ],
+        // 维度B：《中国人口普查年鉴-2020》分受教育程度平均初婚年龄 & 高等教育毛入学率
+        educationLevels: ['初中及以下', '高中/中专', '大学专科', '大学本科', '研究生'],
+        eduTotalAge:  [22.92, 24.42, 25.43, 26.30, 26.97],
+        eduMaleAge:   [24.16, 25.31, 26.07, 26.95, 27.56],
+        eduFemaleAge: [21.65, 23.38, 24.78, 25.68, 26.41],
+        // 维度C：国家统计局2024年1—12月分年龄段城镇调查失业率（不含在校生，100%官方月度公报值）
+        months2024: ['24年1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        youthUnemployment16to24: [14.6, 15.3, 15.3, 14.7, 14.2, 13.2, 17.1, 18.8, 17.6, 17.1, 16.1, 15.7],
+        primeMarriageUnemployment25to29: [6.2, 6.4, 7.2, 7.1, 6.6, 6.4, 6.5, 6.9, 6.7, 6.8, 6.7, 6.6],
+        overallUrbanUnemployment: [5.2, 5.3, 5.2, 5.0, 5.0, 5.0, 5.2, 5.3, 5.1, 5.0, 5.0, 5.1],
+        // 五大深层诱因卡片详情
+        driverCards: [
+          {
+            id: 'job',
+            rank: '01',
+            title: '就业及岗位稳定性：压倒房价的“第一婚育锚点”',
+            metric: '76.4% 视为首要前提 · 69.9% 毕业生求稳',
+            source: '国家统计局2024分年龄组失业率公报 / 智联招聘《2024大学生就业力调研报告》 / 中国人民大学人口与发展研究中心',
+            detail: '房价与房租只是婚育成本的“分子”，而岗位稳定性与收入预期则是“分母”。2024年16–24岁青年调查失业率在13.2%–18.8%高位波动，25–29岁初婚主力段失业率（6.1%–7.2%）亦高于社会均值；全国灵活就业人员达2亿人。高达76.4%的受访青年将“工作与收入稳定”列为结婚第一前提（高于买房的61.8%），69.9%的应届生首选国企（47.7%）与机关事业编（22.2%）——当职业生涯缺乏远期确定性，推迟长周期家庭契约是最理性的防御。'
+          },
+          {
+            id: 'edu',
+            rank: '02',
+            title: '高等教育年限扩张：人生起步线整体后移4.05年',
+            metric: '高教毛入学率 26.5%→60.2% · 研究生初婚 26.97岁',
+            source: '教育部《全国教育事业发展统计公报》 / 国家统计局《中国人口普查年鉴-2020》长表卷',
+            detail: '我国高等教育毛入学率从2010年的26.5%跃升至2023—2024年的60.2%，2024年高校毕业生达1179万人。七普实测显示：研究生平均初婚年龄（26.97岁，女26.41岁）比初中及以下群体（22.92岁，女21.65岁）整整晚了4.05年，且学历越高男女初婚年龄差越小（研究生仅差1.15岁）。“本硕深造+3至5年职场立业期”直接将初婚窗口推至28—30岁。'
+          },
+          {
+            id: 'migration',
+            rank: '03',
+            title: '3.76亿人口大流动：异乡“原子化”与婚恋匹配摩擦',
+            metric: '流动人口 3.76亿 (+69.73%) · 跨省流动 1.25亿',
+            source: '国务院第七次全国人口普查领导小组办公室《第七次全国人口普查公报（第七号）》',
+            detail: '十年间全国流动人口激增69.73%至3.76亿人。在一二线城市打拼的青年脱离了家乡熟人社会的婚恋介绍网络，陷入“合租通勤—工位加班”的原子化生存状态，跨阶层、跨户籍的婚恋搜寻与信任建立成本成倍攀升。'
+          },
+          {
+            id: 'childcare',
+            rank: '04',
+            title: '0–3岁社会化托育缺口：双职工家庭的“照料断层”',
+            metric: '实际入托率仅 7.86% · 56.3% 面临托位紧缺',
+            source: '国务院《关于推进托育服务工作情况的报告》（2024年提请全国人大常委会审议）',
+            detail: '我国3岁以下婴幼儿实际入托率仅为7.86%，远低于OECD发达国家36%的平均水平。在缺乏社会化普惠托育且隔代照料受限于异地居住的背景下，生育往往意味着夫妻一方（绝大多数为女性）必须阶段性牺牲职业发展。'
+          },
+          {
+            id: 'ritual',
+            rank: '05',
+            title: '传统婚嫁礼俗溢价：彩礼与婚庆的“一次性现金流门槛”',
+            metric: '彩礼约合当地 3–6年 可支配收入 · 婚礼均值 15万+',
+            source: '中国人民大学人口与发展研究中心婚俗调研 / 谷雨数据全国彩礼调查',
+            detail: '在下沉市场与部分中西部、华东省份，除婚房首付外，10万—28万元不等的传统彩礼与婚宴开销构成了高昂的“一次性现金流门槛”，迫使刚步入职场、缺乏原生家庭大额资助的年轻男性大幅延长储蓄准备期。'
+          }
+        ]
       },
 
       // 5. 2010 vs 2024 青年人生时钟错位刻度（100% 实测锚点）
@@ -721,14 +807,16 @@
           <span class="px-2 py-0.5 rounded bg-rose-500 text-white font-mono text-[10px] font-bold tracking-widest uppercase">VISUAL ESSAY</span>
           <span class="font-serif italic text-gray-200 hidden sm:inline">The Delayed Red Booklet · 婚姻推迟背后的城市成本账单</span>
         </div>
-        <nav class="hidden md:flex items-center gap-6 font-mono text-[11px]">
+        <nav class="hidden lg:flex items-center gap-4 xl:gap-5 font-mono text-[11px]">
           <a href="#section-hero" class="hover:text-rose-400 transition-colors">00/序幕</a>
           <a href="#section-life-clock" class="hover:text-amber-300 transition-colors">01/青春时差尺</a>
           <a href="#section-trend" class="hover:text-cyan-400 transition-colors">02/十年曲线</a>
           <a href="#section-china-map" class="text-sky-400 hover:text-sky-300 font-semibold transition-colors">03/白蓝中国版图</a>
-          <a href="#section-cost" class="hover:text-rose-400 transition-colors">04/百万育儿与房租</a>
-          <a href="#section-workplace" class="hover:text-violet-400 transition-colors">05/49h工时与母职</a>
-          <a href="#section-references" class="hover:text-emerald-400 transition-colors">06/权威信源</a>
+          <a href="#section-cost" class="hover:text-rose-400 transition-colors">04/居住与育儿</a>
+          <a href="#section-workplace" class="hover:text-violet-400 transition-colors">05/工时与母职</a>
+          <a href="#section-deep-drivers" class="text-amber-300 hover:text-amber-200 font-semibold transition-colors">06/就业与深层本质</a>
+          <a href="#section-synthesis" class="text-rose-300 hover:text-rose-200 font-semibold transition-colors">07/时代与地域总结</a>
+          <a href="#section-references" class="hover:text-emerald-400 transition-colors">08/权威信源</a>
         </nav>
       </div>
     </header>
@@ -890,6 +978,12 @@
                   <span class="font-bold text-zinc-900">女13.0% / 男2.9%</span>
                 </div>
                 <div class="text-[10px] text-zinc-500 -mt-1">↳ 智联招聘2024报告 (女性受冲击比例达男性 4.48倍)</div>
+
+                <div class="flex justify-between items-baseline pt-1">
+                  <span class="font-semibold text-zinc-800">06. 岗位稳定为首要前提 / 青年失业率峰值</span>
+                  <span class="font-bold text-rose-600">76.4% / 18.8%</span>
+                </div>
+                <div class="text-[10px] text-zinc-500 -mt-1">↳ 人大婚育调查第一锚点 &amp; 统计局24年8月16–24岁失业率</div>
               </div>
 
               <!-- Receipt Total & Cinnabar Stamp -->
@@ -1615,6 +1709,351 @@
   </section>
 
   <!-- =========================================================================
+       SECTION 4.5 (NEW CHAPTER 05): 穿透表象——为何“就业及岗位稳定性”才是婚育第一锚点？
+       （五大深层本质诱因：就业确定性 × 学历年限 × 3.76亿人口流动 × 7.86%托育缺口 × 婚俗现金流）
+  ========================================================================== -->
+  <section id="section-deep-drivers" class="relative py-28 sm:py-36 px-6 border-t border-white/[0.06] overflow-hidden">
+    <div data-parallax="75" class="hollow-watermark font-mono font-black text-[15vw] leading-none absolute top-12 left-0 select-none">
+      JOB CERTAINTY
+    </div>
+    <div class="pointer-events-none absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-amber-500/10 blur-[160px]"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <!-- Editorial Header -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-12">
+        <div class="lg:col-span-8 reveal-up">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-amber-400 mb-3">
+            <i data-lucide="Layers" class="w-3.5 h-3.5"></i>
+            <span>CHAPTER 05 / BEYOND HOUSING: JOB STABILITY &amp; FIVE DEEP STRUCTURAL DRIVERS</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            穿透房价表象：为什么<span class="text-amber-400 underline decoration-wavy decoration-amber-400/60 underline-offset-8">就业与岗位稳定性</span><br />
+            才是决定青年敢不敢结婚的“第一锚点”？
+          </h2>
+        </div>
+        <div class="lg:col-span-4 reveal-up">
+          <div class="editorial-note p-4 rounded-r-xl -rotate-1 border-l-amber-400">
+            <div class="text-[11px] font-mono text-amber-300 uppercase mb-1">// 深度归因 · 从表面价格到制度本质</div>
+            <p class="font-hand text-xl text-gray-200 leading-snug">
+              “房价与房租只是婚育账单的‘分子’，而一份看得见未来五年现金流的稳定工作，才是撑起整个家庭契约的‘分母’。”
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-Dimension Switcher Tabs -->
+      <div class="reveal-up flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="flex flex-wrap items-center gap-2.5" id="deep-tab-group">
+          <button data-deepview="prerequisite" class="deep-tab-btn active px-4 py-2 rounded-full text-xs font-mono border border-white/10 text-gray-300 transition-all">
+            维度一：青年婚育前置条件权重 &amp; 69.9%毕业生求稳倾向 (工作稳定 76.4% 居首 &gt; 买房 61.8%)
+          </button>
+          <button data-deepview="unemployment" class="deep-tab-btn px-4 py-2 rounded-full text-xs font-mono border border-white/10 text-gray-300 transition-all">
+            维度二：国家统计局2024分年龄段城镇调查失业率实测 (16–24岁峰值 18.8% vs 25–29岁初婚段)
+          </button>
+          <button data-deepview="education" class="deep-tab-btn px-4 py-2 rounded-full text-xs font-mono border border-white/10 text-gray-300 transition-all">
+            维度三：七普分学历初婚年龄阶梯 (初中22.92岁 → 研究生26.97岁，高教毛入学率 60.2%)
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left 7 Cols: ECharts Multi-Dimensional Deep Driver Chart + Interactive Inspector -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-4 sm:p-7 lg:sticky lg:top-20">
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-3 mb-2 border-b border-white/[0.06]">
+            <span id="deep-chart-subtitle" class="text-xs font-mono text-amber-300">
+              ● 实证对比：工作与收入预期稳定（76.4%）超越购房（61.8%）成为青年步入婚姻第一前提
+            </span>
+            <span class="text-[11px] font-mono text-gray-400">点击右侧 5 大深层维度卡片切换解剖镜</span>
+          </div>
+
+          <div id="chart-deep-drivers" class="w-full h-[430px] sm:h-[460px]"></div>
+
+          <!-- Interactive Deep Factor Inspector Box -->
+          <div id="deep-driver-inspector" class="mt-4 p-5 rounded-2xl bg-gradient-to-br from-amber-500/15 via-charcoal to-obsidian border border-amber-400/35 relative overflow-hidden">
+            <div class="pointer-events-none select-none absolute -right-3 -bottom-6 font-mono font-black text-8xl text-amber-400/10" id="inspector-rank-watermark">01</div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+              <span class="text-[11px] font-mono uppercase tracking-widest text-amber-300" id="inspector-badge">
+                DEEP DRIVER 01 · 核心本质解剖
+              </span>
+              <span class="font-mono text-xs px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-200 border border-amber-400/30 font-bold" id="inspector-metric">
+                76.4% 视为首要前提 · 69.9% 毕业生求稳
+              </span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-white mb-2" id="inspector-title">
+              就业及岗位稳定性：压倒房价的“第一婚育锚点”
+            </h4>
+            <p class="text-xs sm:text-sm text-gray-200 leading-relaxed mb-3" id="inspector-detail">
+              房价与房租只是婚育成本的“分子”，而岗位稳定性与收入预期则是“分母”。2024年16–24岁青年调查失业率在13.2%–18.8%高位波动，25–29岁初婚主力段失业率（6.1%–7.2%）亦高于社会均值；全国灵活就业人员达2亿人。高达76.4%的受访青年将“工作与收入稳定”列为结婚第一前提（高于买房的61.8%），69.9%的应届生首选国企（47.7%）与机关事业编（22.2%）——当职业生涯缺乏远期确定性，推迟长周期家庭契约是最理性的防御。
+            </p>
+            <div class="text-[11px] font-mono text-amber-300/80 pt-2 border-t border-white/10" id="inspector-source">
+              信源：国家统计局2024分年龄组失业率公报 / 智联招聘《2024大学生就业力调研报告》 / 中国人民大学人口与发展研究中心
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 5 Cols: 5 Staggered Deep Structural Factor Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Factor 01: Job & Income Stability -->
+          <div data-driver-idx="0" data-target-view="prerequisite" class="driver-card active cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-amber-400 lg:-ml-3 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-amber-400/15 transition-colors">01</span>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-serif font-bold text-base text-white">第一因：就业与岗位稳定性</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold shrink-0">76.4% 首要前提</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              2024年16–24岁青年调查失业率峰值达 <strong class="text-amber-300 font-mono">18.8%</strong>，全国灵活就业达 <strong class="text-white font-mono">2亿人</strong>；<strong class="text-amber-300 font-mono">69.9%</strong> 应届毕业生倾向进入国企/体制内求稳，“先稳岗立业、再谈婚论嫁”成为青年共识。
+            </p>
+          </div>
+
+          <!-- Factor 02: Higher Education Expansion -->
+          <div data-driver-idx="1" data-target-view="education" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-cyan-400 lg:translate-x-2 -rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-cyan-400/15 transition-colors">02</span>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-serif font-bold text-base text-white">第二因：高等教育年限延长</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold shrink-0">毛入学率 26.5%→60.2%</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              2024年高校毕业生达 <strong class="text-cyan-300 font-mono">1179万人</strong>。七普实测：研究生平均初婚年龄（<strong class="text-white font-mono">26.97岁</strong>）比初中及以下（22.92岁）晚 <strong class="text-cyan-300 font-mono">4.05年</strong>，学历跃升拉长了社会化准备期。
+            </p>
+          </div>
+
+          <!-- Factor 03: 376 Million Floating Population & Atomization -->
+          <div data-driver-idx="2" data-target-view="unemployment" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-rose-500 lg:-ml-2 rotate-[0.5deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-rose-500/15 transition-colors">03</span>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-serif font-bold text-base text-white">第三因：3.76亿流动人口与都市原子化</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold shrink-0">十年激增 +69.73%</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              七普实测我国流动人口达 <strong class="text-rose-300 font-mono">3.76亿人</strong>（跨省1.25亿）。大都市异乡青年脱离熟人社会支持网，高通勤与独居生活显著推高了婚恋搜寻与匹配摩擦成本。
+            </p>
+          </div>
+
+          <!-- Factor 04: 0-3 Childcare Deficit -->
+          <div data-driver-idx="3" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-violet-400 lg:translate-x-2 -rotate-[0.5deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-violet-400/15 transition-colors">04</span>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-serif font-bold text-base text-white">第四因：0–3岁普惠托育与照料断层</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 font-bold shrink-0">实际入托率仅 7.86%</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              国务院2024托育工作报告披露：我国3岁以下婴幼儿入托率仅 <strong class="text-violet-300 font-mono">7.86%</strong>（远低于OECD均值36%），<strong class="text-white font-mono">56.3%</strong> 家庭面临普惠托位紧缺，加剧双职工育儿后顾之忧。
+            </p>
+          </div>
+
+          <!-- Factor 05: Bride Price & Wedding Sunk Cost -->
+          <div data-driver-idx="4" data-target-view="prerequisite" class="driver-card cursor-pointer glass-card rounded-2xl p-5 border-l-4 border-l-emerald-400 lg:-ml-2 rotate-[0.6deg] hover:rotate-0 transition-all relative overflow-hidden group">
+            <span class="pointer-events-none select-none absolute -right-2 -bottom-4 font-mono font-black text-7xl text-white/[0.04] group-hover:text-emerald-400/15 transition-colors">05</span>
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <span class="font-serif font-bold text-base text-white">第五因：婚嫁礼俗与一次性启动门槛</span>
+              <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold shrink-0">彩礼约合 3–6年 收入</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              在县域及部分省份，10万—28万元彩礼与婚宴刚性支出叠加上车的首付要求，构成高昂的“一次性现金流门槛”，迫使低储蓄青年拉长婚前积累期。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4.8 (NEW CHAPTER 06): 时代镜像与山海折叠——当下中国婚育的时代特征、地域特征与话题总结
+  ========================================================================== -->
+  <section id="section-synthesis" class="relative py-28 sm:py-36 px-6 border-t border-white/[0.06] overflow-hidden">
+    <div data-parallax="-80" class="hollow-watermark font-serif font-black text-[15vw] leading-none absolute top-10 right-0 select-none">
+      ERA × REGION
+    </div>
+    <div class="pointer-events-none absolute bottom-1/4 left-1/3 w-[560px] h-[560px] rounded-full bg-rose-500/10 blur-[170px]"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <!-- Section Header -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14">
+        <div class="lg:col-span-8 reveal-up">
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-rose-400 mb-3">
+            <i data-lucide="Sparkles" class="w-3.5 h-3.5"></i>
+            <span>CHAPTER 06 / GRAND SYNTHESIS: ERA &amp; REGIONAL CHARACTERISTICS</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+            时代镜像与山海折叠：<br />
+            <span class="text-rose-400">中国当代婚育变迁的“四大时代特征”与“四大地域格局”</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-4 reveal-up">
+          <p class="font-hand text-2xl text-amber-300 leading-snug">
+            “读懂一条初婚年龄曲线，就是读懂当代中国青年在时间轴与地理版图上的生存突围。”
+          </p>
+        </div>
+      </div>
+
+      <!-- Dual Magazine Columns: 4 Era Characteristics (Left) + 4 Regional Characteristics (Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-14">
+
+        <!-- Left 6 Cols: 四大时代特征 (Era Characteristics) -->
+        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-rose-500 relative overflow-hidden reveal-up">
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-widest text-rose-400 block">DIMENSION I · TEMPORAL SHIFT</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-black text-white mt-0.5">当下中国婚育的“四大时代特征”</h3>
+            </div>
+            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm rotate-6 font-serif font-black text-xs shrink-0">
+              时代切面<br/><span class="text-[9px] font-mono">2010–2025</span>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-amber-300">01 · 从“生存本能”转向“确定性契约”</span>
+                <span class="font-mono text-[11px] text-amber-400 font-bold">76.4% 首要锚点</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>工作与收入预期稳定成为第一前置条件</strong>：面对16–24岁青年失业率波动（13.2%–18.8%）与2亿灵活就业浪潮，近七成（69.9%）毕业生倾向体制内求稳；没有稳定的岗位现金流，年轻人拒绝盲目进入高负债的婚姻契约。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-cyan-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-cyan-300">02 · 从“24岁早婚普婚”迈入“30岁晚婚新纪元”</span>
+                <span class="font-mono text-[11px] text-cyan-400 font-bold">24.89岁 → 28.67岁</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>高学历延长与生命周期整体后移</strong>：高等教育毛入学率十年从26.5%跃升至60.2%，“本硕深造（研究生初婚26.97岁）+ 3至5年职场立足期”使全国初婚年龄十年陡增3.78岁，30岁以上登记人群逼近半数。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-rose-300">03 · 从“感性结合”转向“防御性风控精算”</span>
+                <span class="font-mono text-[11px] text-rose-400 font-bold">34.8x PIR · ¥101万育儿</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>高安居与高养育门槛触发棘轮效应</strong>：一线城市26.5—34.8倍房价收入比、超四分之一的房租收入比与53.8万—101.0万元直接育儿成本，迫使青年用“推迟婚龄”拉长原始资本积累时间。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-violet-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-violet-300">04 · 从“家庭内部消化”转向“性别与时间博弈”</span>
+                <span class="font-mono text-[11px] text-violet-400 font-bold">女+3.95岁 · 4.48x惩罚</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>高学历女性以晚婚规避母职惩罚</strong>：在49.0小时周工时与0–3岁入托率仅7.86%的夹击下，女性因婚育被动失晋升比例达男性4.48倍（13.0% vs 2.9%），女性十年初婚推迟斜率显著快于男性。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right 6 Cols: 四大地域特征 (Regional Characteristics) -->
+        <div class="lg:col-span-6 glass-card rounded-3xl p-6 sm:p-8 border-t-4 border-t-sky-400 relative overflow-hidden reveal-up">
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-widest text-sky-400 block">DIMENSION II · SPATIAL FOLDING</span>
+              <h3 class="font-serif text-2xl sm:text-3xl font-black text-white mt-0.5">当下中国婚育的“四大地域特征”</h3>
+            </div>
+            <div class="cinnabar-stamp px-2.5 py-1 rounded-sm -rotate-6 font-serif font-black text-xs shrink-0 border-sky-400 text-sky-300">
+              山海图谱<br/><span class="text-[9px] font-mono">31 PROVINCES</span>
+            </div>
+          </div>
+
+          <div class="space-y-5">
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-rose-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-rose-300">01 · 东北与京沪：“一北一东”双峰晚婚极</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold">黑 31.48岁 / 沪 30.10岁</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>先发城镇化老龄化与超大城市高成本殊途同归</strong>：全国最晚婚并非仅在北上广——黑龙江（31.48岁）与辽宁（29.79岁）因高城镇化率、体制内高就业比重与青年外流居首；上海（30.10岁）则代表都市极限生活成本下的晚婚极值。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-sky-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-sky-300">02 · 珠三角与长三角：青年虹吸与高成本分化极</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">粤 102.38万人全国第1</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>人口流入撑起登记盘，但安居门槛拉长婚前准备</strong>：广东凭省外年轻劳动力涌入蝉联结婚登记榜首（51.19万对）；长三角（沪苏浙皖）则在“跨省通办”下呈现登记总量庞大、但初婚年龄全面向28—30岁逼近的态势。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-amber-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-amber-300">03 · 中原与华北县域：人口基本盘与礼俗挤压极</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold">豫 47.13万对 / 鲁 35.30万对</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>大体量登记背后的县域婚嫁现金流博弈</strong>：河南、山东、河北等人口大省构成全国结婚登记的中流砥柱，但县城婚房刚需与传统彩礼溢价叠加，正推动中部省份初婚年龄加速向28.5—29岁收敛（如河南已超29岁）。
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-400/50 transition-all">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="font-serif font-bold text-base text-emerald-300">04 · 西南高原与稳房价省会：早婚高率缓冲绿洲</span>
+                <span class="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">藏14.92‰ · 黔13.71‰ · 长沙6.5x</span>
+              </div>
+              <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                <strong>多元婚育文化与低居住成本的双重托底</strong>：西藏（结婚人口率14.92‰、初婚占比90.04%）、贵州（13.71‰、初婚27.26岁）、青海（13.12‰）稳居全国结婚率前三；长沙（房价收入比6.5x）则实证了稳房价对延缓晚婚的显著作用。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full-Width Topic Conclusion Banner (作为整个新闻话题的总结) -->
+      <div class="reveal-up glass-card rounded-3xl p-8 sm:p-12 border border-rose-500/40 bg-gradient-to-br from-rose-500/15 via-charcoal to-obsidian relative overflow-hidden">
+        <div class="pointer-events-none select-none absolute -right-6 -bottom-10 font-serif font-black text-[130px] text-white/[0.03]">总结</div>
+
+        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 mb-6 border-b border-white/10">
+          <div class="inline-flex items-center gap-2.5">
+            <span class="px-3 py-1 rounded-full bg-rose-500 text-white font-mono text-xs font-bold tracking-widest uppercase">
+              TOPIC CONCLUSION · 新闻话题总结
+            </span>
+            <span class="text-xs font-mono text-amber-300">
+              // 从“催婚焦虑”走向“制度减负与确定性重建”
+            </span>
+          </div>
+          <span class="font-mono text-xs text-gray-400">PULITZER DATA JOURNALISM SYNTHESIS</span>
+        </div>
+
+        <h3 class="font-serif text-2xl sm:text-4xl font-bold text-white leading-snug mb-6">
+          初婚年龄十年陡升的本质，不是青年对亲密关系的背离，而是<span class="text-amber-300">“就业预期波动、安居养育高成本、性别照料失衡”</span>三重结构性压力在青年生命周期上的投射。
+        </h3>
+
+        <p class="text-sm sm:text-base text-gray-200 leading-relaxed mb-8 max-w-5xl">
+          纵观2010至2025年的中国婚育图景，在<strong>时间维度</strong>上，高等教育扩张与职场求稳周期重塑了青年的成年步调，“先立业稳岗（76.4%）、后成家育儿”取代了传统的早婚惯性；在<strong>空间维度</strong>上，东北的先发老龄化（黑龙江31.48岁）、京沪深的高成本挤压（上海30.1岁、深圳房价收入比34.8倍）与西南的高结婚率（西藏14.92‰、贵州13.71‰）折叠出冷热分明的中国婚育地理。要真正回应年轻人的“恐婚晚婚”，公共政策必须穿透表象，在三个核心支点上重建年轻人的生活确定性：
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-5 rounded-2xl bg-black/40 border border-amber-400/30">
+            <div class="font-mono text-xs text-amber-400 uppercase mb-1">PILLAR 01 · 筑牢分母</div>
+            <div class="font-serif font-bold text-lg text-white mb-2">稳就业与改善青年收入预期</div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              拓宽高校毕业生高质量就业渠道，健全2亿灵活就业群体的社保与劳动权益保障，落实44小时法定工时制度，给青年敢于缔结长期家庭契约的“收入安全感”。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-black/40 border border-cyan-400/30">
+            <div class="font-mono text-xs text-cyan-400 uppercase mb-1">PILLAR 02 · 削减分子</div>
+            <div class="font-serif font-bold text-lg text-white mb-2">青年保障性安居与育儿补贴</div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              借鉴“长沙稳房价”经验，扩大一二线城市新市民保障性租赁住房供给、实现租购同权，并通过阶梯式现金育儿补贴与个税抵扣，对冲百万级养育账单。
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-black/40 border border-rose-400/30">
+            <div class="font-mono text-xs text-rose-400 uppercase mb-1">PILLAR 03 · 抚平鸿沟</div>
+            <div class="font-serif font-bold text-lg text-white mb-2">普惠托育与男女共担育儿假</div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              大力补齐0–3岁普惠托育短板（突破当前7.86%入托率瓶颈），推行男女强制共担的带薪育儿假与企业雇佣补贴，从制度根源上消除女性4.48倍的“母职晋升惩罚”。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
        SECTION 5: 权威数据信源与口径说明 + 杂志级终章结语
   ========================================================================== -->
   <section id="section-references" class="relative py-28 px-6 border-t border-white/[0.06] overflow-hidden">
@@ -1682,6 +2121,18 @@
                   <td class="py-3.5 px-5">国家统计局月度/年度劳动力调查数据；智联招聘《2024中国女性职场现状调查报告》</td>
                   <td class="py-3.5 px-5">企业就业人员调查周实际平均工时；智联招聘覆盖全国职场白领性别对比抽样调查。</td>
                 </tr>
+                <tr>
+                  <td class="py-3.5 px-5 font-medium text-white">青年就业稳定性与失业率</td>
+                  <td class="py-3.5 px-5 font-mono text-amber-300">2024年16–24岁失业率 13.2%–18.8%<br/>岗位稳定居首 76.4% · 求稳倾向 69.9%</td>
+                  <td class="py-3.5 px-5">国家统计局2024年分年龄组城镇调查失业率月度公报；智联招聘《2024大学生就业力调研报告》；中国人民大学人口与发展研究中心</td>
+                  <td class="py-3.5 px-5">16–24岁及25–29岁调查失业率均为国家统计局不含在校生实测口径；应届生求稳比例为国企(47.7%)+政府事业(22.2%)合计。</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 px-5 font-medium text-white">高等教育、流动人口与托育</td>
+                  <td class="py-3.5 px-5 font-mono text-rose-300">研究生初婚 26.97岁 · 高教毛入学率 60.2%<br/>流动人口 3.76亿 · 0–3岁入托率 7.86%</td>
+                  <td class="py-3.5 px-5">《中国人口普查年鉴-2020》分受教育程度初婚表；教育部统计公报；国务院《关于推进托育服务工作情况的报告》(2024)</td>
+                  <td class="py-3.5 px-5">七普分学历初婚年龄实测对比；全国人大常委会2024审议托育报告披露3岁以下婴幼儿入托率与托位缺口。</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1736,11 +2187,13 @@
     let chinaMapChartInstance = null;
     let bubbleChartInstance = null;
     let workplaceChartInstance = null;
+    let deepDriversChartInstance = null;
 
     let trendChartRendered = false;
     let chinaMapChartRendered = false;
     let bubbleChartRendered = false;
     let workplaceChartRendered = false;
+    let deepDriversChartRendered = false;
     let currentSelectedProvince = '广东';
 
     /* -------------------------------------------------------------------------
@@ -2847,6 +3300,302 @@
     }
 
     /* -------------------------------------------------------------------------
+       4.5 SECTION 4.5: DEEP STRUCTURAL DRIVERS CHART (JOB STABILITY, UNEMPLOYMENT, EDUCATION)
+    ------------------------------------------------------------------------- */
+    function buildDeepPrerequisiteOption() {
+      const d = AUTHORITATIVE_DATA.deepStructuralDrivers;
+      const colors = ['#f59e0b', '#fbbf24', '#06b6d4', '#38bdf8', '#a78bfa', '#f43f5e'];
+      return {
+        backgroundColor: 'transparent',
+        grid: { top: 28, left: 24, right: 64, bottom: 32, containLabel: true },
+        tooltip: {
+          ...ECHARTS_TOOLTIP_STYLE,
+          trigger: 'axis',
+          axisPointer: { type: 'shadow' },
+          formatter: (params) => {
+            const p = params[0];
+            const idx = p.dataIndex;
+            return `
+              <div style="max-width:290px;">
+                <div style="font-weight:700;color:#fff;margin-bottom:6px;">${p.name.replace('\n', ' ')}</div>
+                <div style="font-family:JetBrains Mono;font-size:18px;font-weight:800;color:#fbbf24;margin-bottom:6px;">${p.value}%</div>
+                <div style="font-size:11px;color:#9ca3af;line-height:1.4;">信源：${d.prerequisiteSources[idx]}</div>
+              </div>
+            `;
+          }
+        },
+        xAxis: {
+          type: 'value',
+          max: 88,
+          name: '受访青年占比 / 统计局实测比率 (%)',
+          nameLocation: 'middle',
+          nameGap: 26,
+          nameTextStyle: { color: '#9ca3af', fontSize: 11 },
+          axisLabel: { color: '#9ca3af', fontFamily: 'JetBrains Mono', fontSize: 11, formatter: '{value}%' },
+          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)', type: 'dashed' } }
+        },
+        yAxis: {
+          type: 'category',
+          inverse: true,
+          data: d.prerequisiteFactors,
+          axisLine: { lineStyle: { color: 'rgba(255,255,255,0.14)' } },
+          axisTick: { show: false },
+          axisLabel: { color: '#e5e7eb', fontSize: 11, lineHeight: 15 }
+        },
+        series: [
+          {
+            name: '核心指标占比 (%)',
+            type: 'bar',
+            barWidth: 22,
+            data: d.prerequisiteValues.map((val, idx) => ({
+              value: val,
+              itemStyle: {
+                borderRadius: [0, 8, 8, 0],
+                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                  { offset: 0, color: 'rgba(255,255,255,0.08)' },
+                  { offset: 1, color: colors[idx] }
+                ]),
+                shadowColor: colors[idx],
+                shadowBlur: idx === 0 ? 16 : 6
+              }
+            })),
+            label: {
+              show: true,
+              position: 'right',
+              formatter: '{c}%',
+              color: '#fff',
+              fontFamily: 'JetBrains Mono',
+              fontWeight: 700,
+              fontSize: 12
+            },
+            animationDuration: 1400
+          }
+        ]
+      };
+    }
+
+    function buildDeepUnemploymentOption() {
+      const d = AUTHORITATIVE_DATA.deepStructuralDrivers;
+      return {
+        backgroundColor: 'transparent',
+        grid: { top: 52, left: 44, right: 36, bottom: 38, containLabel: true },
+        legend: {
+          top: 4,
+          left: 8,
+          textStyle: { color: '#d1d5db', fontSize: 11 }
+        },
+        tooltip: {
+          ...ECHARTS_TOOLTIP_STYLE,
+          trigger: 'axis'
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: d.months2024,
+          axisLine: { lineStyle: { color: 'rgba(255,255,255,0.14)' } },
+          axisTick: { show: false },
+          axisLabel: { color: '#9ca3af', fontFamily: 'JetBrains Mono', fontSize: 11 }
+        },
+        yAxis: {
+          type: 'value',
+          name: '城镇调查失业率 (不含在校生 · %)',
+          min: 3,
+          max: 21,
+          nameTextStyle: { color: '#fbbf24', fontSize: 11 },
+          axisLabel: { color: '#9ca3af', fontFamily: 'JetBrains Mono', fontSize: 11, formatter: '{value}%' },
+          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)', type: 'dashed' } }
+        },
+        series: [
+          {
+            name: '16–24岁青年调查失业率 (%)',
+            type: 'line',
+            smooth: 0.35,
+            symbol: 'circle',
+            symbolSize: 8,
+            data: d.youthUnemployment16to24,
+            lineStyle: { width: 3.5, color: '#f59e0b', shadowColor: '#f59e0b', shadowBlur: 14 },
+            itemStyle: { color: '#f59e0b', borderColor: '#fff', borderWidth: 1.5 },
+            areaStyle: {
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: 'rgba(245, 158, 11, 0.32)' },
+                { offset: 1, color: 'rgba(245, 158, 11, 0.0)' }
+              ])
+            },
+            markPoint: {
+              data: [{ type: 'max', name: '毕业季峰值' }],
+              itemStyle: { color: '#f43f5e' },
+              label: { formatter: '{c}%', fontFamily: 'JetBrains Mono', fontSize: 10 }
+            }
+          },
+          {
+            name: '25–29岁初婚主力段调查失业率 (%)',
+            type: 'line',
+            smooth: 0.35,
+            symbol: 'diamond',
+            symbolSize: 8,
+            data: d.primeMarriageUnemployment25to29,
+            lineStyle: { width: 3, color: '#06b6d4' },
+            itemStyle: { color: '#06b6d4', borderColor: '#07080c', borderWidth: 1.5 }
+          },
+          {
+            name: '全国城镇总体调查失业率 (%)',
+            type: 'line',
+            smooth: 0.3,
+            symbol: 'emptyCircle',
+            symbolSize: 6,
+            data: d.overallUrbanUnemployment,
+            lineStyle: { width: 2, type: 'dashed', color: '#9ca3af' },
+            itemStyle: { color: '#9ca3af' }
+          }
+        ]
+      };
+    }
+
+    function buildDeepEducationOption() {
+      const d = AUTHORITATIVE_DATA.deepStructuralDrivers;
+      return {
+        backgroundColor: 'transparent',
+        grid: { top: 52, left: 48, right: 36, bottom: 38, containLabel: true },
+        legend: {
+          top: 4,
+          left: 8,
+          textStyle: { color: '#d1d5db', fontSize: 11 }
+        },
+        tooltip: {
+          ...ECHARTS_TOOLTIP_STYLE,
+          trigger: 'axis',
+          axisPointer: { type: 'shadow' }
+        },
+        xAxis: {
+          type: 'category',
+          data: d.educationLevels,
+          axisLine: { lineStyle: { color: 'rgba(255,255,255,0.14)' } },
+          axisTick: { show: false },
+          axisLabel: { color: '#e5e7eb', fontSize: 12, fontWeight: 600 }
+        },
+        yAxis: {
+          type: 'value',
+          name: '七普实测平均初婚年龄 (岁)',
+          min: 20,
+          max: 29,
+          nameTextStyle: { color: '#22d3ee', fontSize: 11 },
+          axisLabel: { color: '#9ca3af', fontFamily: 'JetBrains Mono', fontSize: 11, formatter: '{value}岁' },
+          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.06)', type: 'dashed' } }
+        },
+        series: [
+          {
+            name: '男性平均初婚年龄 (岁)',
+            type: 'bar',
+            barWidth: 22,
+            data: d.eduMaleAge,
+            itemStyle: {
+              borderRadius: [6, 6, 0, 0],
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: '#38bdf8' },
+                { offset: 1, color: 'rgba(56, 189, 248, 0.2)' }
+              ])
+            },
+            label: { show: true, position: 'top', formatter: '{c}', color: '#38bdf8', fontFamily: 'JetBrains Mono', fontSize: 10 }
+          },
+          {
+            name: '女性平均初婚年龄 (岁)',
+            type: 'bar',
+            barWidth: 22,
+            data: d.eduFemaleAge,
+            itemStyle: {
+              borderRadius: [6, 6, 0, 0],
+              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                { offset: 0, color: '#f43f5e' },
+                { offset: 1, color: 'rgba(244, 63, 94, 0.2)' }
+              ])
+            },
+            label: { show: true, position: 'top', formatter: '{c}', color: '#fb7185', fontFamily: 'JetBrains Mono', fontSize: 10 }
+          },
+          {
+            name: '总体平均初婚年龄 (岁)',
+            type: 'line',
+            smooth: 0.25,
+            symbol: 'circle',
+            symbolSize: 9,
+            data: d.eduTotalAge,
+            lineStyle: { width: 3, color: '#fbbf24', shadowColor: '#fbbf24', shadowBlur: 12 },
+            itemStyle: { color: '#fbbf24', borderColor: '#fff', borderWidth: 2 }
+          }
+        ]
+      };
+    }
+
+    function initDeepDriversChart() {
+      const dom = document.getElementById('chart-deep-drivers');
+      if (!dom) return;
+      deepDriversChartInstance = echarts.init(dom);
+
+      const subtitleMap = {
+        prerequisite: '● 实证对比：工作与收入预期稳定（76.4%）超越购房（61.8%）成为青年步入婚姻第一前提',
+        unemployment: '● 国家统计局2024实测：16–24岁青年调查失业率在13.2%–18.8%波动，求稳成为青年首要理性选择',
+        education: '● 《中国人口普查年鉴-2020》：研究生初婚年龄（26.97岁）较初中及以下（22.92岁）推迟4.05年'
+      };
+
+      function switchDeepView(viewMode) {
+        const deepTabs = document.querySelectorAll('#deep-tab-group .deep-tab-btn');
+        deepTabs.forEach((b) => {
+          if (b.getAttribute('data-deepview') === viewMode) {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+        document.getElementById('deep-chart-subtitle').textContent = subtitleMap[viewMode] || subtitleMap.prerequisite;
+        if (viewMode === 'unemployment') {
+          deepDriversChartInstance.setOption(buildDeepUnemploymentOption(), true);
+        } else if (viewMode === 'education') {
+          deepDriversChartInstance.setOption(buildDeepEducationOption(), true);
+        } else {
+          deepDriversChartInstance.setOption(buildDeepPrerequisiteOption(), true);
+        }
+      }
+
+      ScrollTrigger.create({
+        trigger: '#chart-deep-drivers',
+        start: 'top 80%',
+        onEnter: () => {
+          if (!deepDriversChartRendered) {
+            deepDriversChartInstance.setOption(buildDeepPrerequisiteOption());
+            deepDriversChartRendered = true;
+          }
+        }
+      });
+
+      document.querySelectorAll('#deep-tab-group .deep-tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          switchDeepView(btn.getAttribute('data-deepview'));
+        });
+      });
+
+      const cards = document.querySelectorAll('.driver-card');
+      cards.forEach((card) => {
+        card.addEventListener('click', () => {
+          const idx = parseInt(card.getAttribute('data-driver-idx') || '0', 10);
+          const targetView = card.getAttribute('data-target-view') || 'prerequisite';
+          const info = AUTHORITATIVE_DATA.deepStructuralDrivers.driverCards[idx];
+          if (!info) return;
+
+          cards.forEach((c) => c.classList.remove('active'));
+          card.classList.add('active');
+
+          document.getElementById('inspector-rank-watermark').textContent = info.rank;
+          document.getElementById('inspector-badge').textContent = `DEEP DRIVER ${info.rank} · 核心本质解剖`;
+          document.getElementById('inspector-metric').textContent = info.metric;
+          document.getElementById('inspector-title').textContent = info.title;
+          document.getElementById('inspector-detail').textContent = info.detail;
+          document.getElementById('inspector-source').textContent = `信源：${info.source}`;
+
+          switchDeepView(targetView);
+        });
+      });
+    }
+
+    /* -------------------------------------------------------------------------
        5. INITIALIZE ALL & RESIZE LISTENER
     ------------------------------------------------------------------------- */
     window.addEventListener('DOMContentLoaded', () => {
@@ -2856,12 +3605,14 @@
       initChinaMapChart();
       initBubbleChart();
       initWorkplaceChart();
+      initDeepDriversChart();
 
       window.addEventListener('resize', () => {
         if (trendChartInstance) trendChartInstance.resize();
         if (chinaMapChartInstance) chinaMapChartInstance.resize();
         if (bubbleChartInstance) bubbleChartInstance.resize();
         if (workplaceChartInstance) workplaceChartInstance.resize();
+        if (deepDriversChartInstance) deepDriversChartInstance.resize();
       });
     });
   </script>
